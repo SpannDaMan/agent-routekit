@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/outcome.schema.json",
+  "title": "Agent RouteKit Independent Outcome Attachment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "decision_id", "evidence_source", "observed_route_id", "metrics", "limitations", "routekit_non_collection_statement"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "decision_id": {"type": "string", "pattern": "^[0-9a-f]{16}$"},
+    "evidence_source": {"type": "string", "minLength": 1},
+    "observed_route_id": {"type": "string", "minLength": 1},
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "unit", "baseline", "observed", "direction"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "unit": {"type": "string", "minLength": 1},
+          "baseline": {"type": "number"},
+          "observed": {"type": "number"},
+          "direction": {"enum": ["higher_is_better", "lower_is_better", "context_only"]}
+        }
+      }
+    },
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "routekit_non_collection_statement": {"const": "RouteKit did not collect or execute this outcome."}
+  }
+}

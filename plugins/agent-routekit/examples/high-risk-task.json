@@ -1,0 +1,9 @@
+{
+  "id": "review-auth-migration",
+  "summary": "Plan and review a security-sensitive authentication migration.",
+  "complexity": "complex",
+  "risk": "high",
+  "minimum_quality": "high",
+  "required_capabilities": ["analysis", "coding", "tool-use"],
+  "independent_review": true
+}

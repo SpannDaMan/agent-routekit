@@ -1,0 +1,35 @@
+{
+  "name": "agent-routekit",
+  "version": "0.1.1",
+  "description": "Plan policy-bound routes and explain the decision without executing them.",
+  "author": {
+    "name": "Orbral",
+    "url": "https://github.com/SpannDaMan"
+  },
+  "homepage": "https://github.com/SpannDaMan/agent-routekit",
+  "repository": "https://github.com/SpannDaMan/agent-routekit",
+  "license": "MIT",
+  "keywords": ["agents", "codex", "model-routing", "orchestration", "receipts"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent RouteKit",
+    "shortDescription": "Plan the route, not the run.",
+    "longDescription": "Evaluate declared planning policies and produce a transparent Policy-Bound Route Receipt with candidates, exclusions, assumptions, alternatives, and the no-execution boundary. No providers are called and no runtime is dispatched.",
+    "developerName": "Orbral",
+    "category": "Developer Tools",
+    "capabilities": ["Local", "Planning policy evaluation", "Decision receipts", "Outcome reconciliation", "No credentials"],
+    "websiteURL": "https://github.com/SpannDaMan/agent-routekit",
+    "privacyPolicyURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Recommend a planning route.",
+      "Compare these candidate routes.",
+      "Produce a policy-bound decision receipt."
+    ],
+    "brandColor": "#0183E0",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
+    "screenshots": ["./assets/screenshot1.png"]
+  }
+}

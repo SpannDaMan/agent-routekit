@@ -1,0 +1,8 @@
+{
+  "id": "replace-with-real-case-id",
+  "planning_receipt": {"path": "replace-with-planning-receipt", "sha256": "replace-with-real-sha256"},
+  "outcome_attachment": {"path": "replace-with-independent-outcome", "sha256": "replace-with-real-sha256"},
+  "reconciliation_receipt": {"path": "replace-with-reconciliation-receipt", "sha256": "replace-with-real-sha256"},
+  "host_independent": true,
+  "evidence_source": "replace-with-independent-evidence-source"
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/receipt.schema.json",
+  "title": "Agent RouteKit Routing Receipt",
+  "$defs": {
+    "publicRoute": {
+      "type": "object",
+      "required": ["route_id", "model", "effort", "owner", "cost_rank", "quality_level", "independence_group"],
+      "properties": {
+        "route_id": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1},
+        "effort": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "cost_rank": {"type": "integer", "minimum": 1},
+        "quality_level": {"enum": ["routine", "standard", "high", "critical"]},
+        "independence_group": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "rejection": {
+      "type": "object",
+      "required": ["route_id", "reasons"],
+      "properties": {
+        "route_id": {"type": "string", "minLength": 1},
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "tool",
+    "decision_id",
+    "task",
+    "policy",
+    "fingerprints",
+    "execution",
+    "eligible_alternatives",
+    "verification",
+    "reason",
+    "rejected_execution_routes",
+    "limitations",
+    "assumptions",
+    "unresolved_evidence",
+    "no_execution_boundary"
+  ],
+  "properties": {
+    "receipt_version": {"const": "1.0"},
+    "tool": {"const": {"name": "agent-routekit", "version": "0.1.1"}},
+    "decision_id": {"type": "string", "pattern": "^[a-f0-9]{16}$"},
+    "task": {
+      "type": "object",
+      "required": ["id", "fingerprint"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "registry_fingerprint",
+        "required_quality_rank",
+        "complexity",
+        "risk",
+        "required_capabilities",
+        "independent_review_required"
+      ],
+      "properties": {
+        "registry_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "required_quality_rank": {"type": "integer", "minimum": 1, "maximum": 4},
+        "complexity": {"enum": ["routine", "standard", "complex", "novel"]},
+        "risk": {"enum": ["low", "medium", "high", "critical"]},
+        "required_capabilities": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "independent_review_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "fingerprints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "registry"],
+      "properties": {
+        "policy": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "registry": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "execution": {"$ref": "#/$defs/publicRoute"},
+    "eligible_alternatives": {"type": "array", "items": {"$ref": "#/$defs/publicRoute"}},
+    "verification": {
+      "type": "object",
+      "required": ["required", "route", "rejected_routes"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "route": {"oneOf": [{"$ref": "#/$defs/publicRoute"}, {"type": "null"}]},
+        "rejected_routes": {"type": "array", "items": {"$ref": "#/$defs/rejection"}}
+      },
+      "additionalProperties": false
+    },
+    "reason": {"type": "string", "minLength": 1},
+    "rejected_execution_routes": {"type": "array", "items": {"$ref": "#/$defs/rejection"}},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "unresolved_evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "no_execution_boundary": {"const": "Agent RouteKit planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."}
+  },
+  "additionalProperties": false
+}

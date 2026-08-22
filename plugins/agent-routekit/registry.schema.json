@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/registry.schema.json",
+  "title": "Agent RouteKit Route Registry",
+  "type": "object",
+  "required": ["schema_version", "routes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "roles",
+          "model",
+          "effort",
+          "owner",
+          "independence_group",
+          "cost_rank",
+          "quality_level",
+          "max_complexity",
+          "max_risk",
+          "capabilities"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["execute", "verify"]}
+          },
+          "model": {"type": "string", "minLength": 1},
+          "effort": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "independence_group": {"type": "string", "minLength": 1},
+          "cost_rank": {"type": "integer", "minimum": 1},
+          "quality_level": {"enum": ["routine", "standard", "high", "critical"]},
+          "max_complexity": {"enum": ["routine", "standard", "complex", "novel"]},
+          "max_risk": {"enum": ["low", "medium", "high", "critical"]},
+          "capabilities": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

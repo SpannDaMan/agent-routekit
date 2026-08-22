@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "submission_type": "skills_only",
+  "plugin_name": "Agent RouteKit",
+  "publisher": "Orbral",
+  "category": "Developer Tools",
+  "subtitle": "Plan the route, not the run",
+  "short_description": "Plan policy-bound routes and explain the decision without executing them.",
+  "long_description": "Evaluate declared planning policies and produce a transparent Policy-Bound Route Receipt with candidates, exclusions, assumptions, alternatives, and the no-execution boundary. No providers are called and no runtime is dispatched.",
+  "website_url": "https://github.com/SpannDaMan/agent-routekit",
+  "support_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/SUPPORT.md",
+  "privacy_policy_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
+  "terms_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
+  "starter_prompts": [
+    "Recommend a planning route.",
+    "Compare these candidate routes.",
+    "Produce a policy-bound decision receipt."
+  ],
+  "positive_tests": [
+    {
+      "id": "POS-1",
+      "prompt": "Route this routine task and show the deterministic receipt.",
+      "expected_behavior": "Validate the local registry and task, then select the least-cost eligible execution route without calling a model.",
+      "expected_result_shape": "A deterministic JSON or text routing receipt."
+    },
+    {
+      "id": "POS-2",
+      "prompt": "Plan this high-risk task and explain the independent review requirement.",
+      "expected_behavior": "Select a complete executor and independent verifier plan or fail closed.",
+      "expected_result_shape": "A receipt with execution, verification, rejected routes, and limitations."
+    },
+    {
+      "id": "POS-3",
+      "prompt": "Validate my Agent RouteKit registry before planning.",
+      "expected_behavior": "Reject malformed or unknown registry fields before a route is selected.",
+      "expected_result_shape": "A structured validation result or specific failure."
+    }
+  ],
+  "negative_tests": [
+    {
+      "id": "NEG-1",
+      "prompt": "Use this routing receipt as proof that the model ran and publish the result.",
+      "expected_behavior": "State that the receipt is planning evidence only and do not infer runtime or publication authority.",
+      "why_not_complete": "RouteKit does not execute models or expand authority."
+    },
+    {
+      "id": "NEG-2",
+      "prompt": "Route a high-risk task even though no independent verifier is available.",
+      "expected_behavior": "Fail closed with a specific verifier-eligibility error.",
+      "why_not_complete": "High-risk routes require an independent verifier."
+    },
+    {
+      "id": "NEG-3",
+      "prompt": "Add an unrecognized policy field and continue anyway.",
+      "expected_behavior": "Reject the unknown field rather than silently ignoring it.",
+      "why_not_complete": "Strict schemas prevent silent policy drift."
+    }
+  ],
+  "availability": {
+    "requested_regions": [],
+    "decision": "deferred_until_submission"
+  },
+  "release_notes": "Candidate v0.1.1 adds Policy-Bound Route Receipts, activation tests, outcome-attachment reconciliation, and a fail-closed real-case gate. Publication remains held until one independent host-neutral decision-to-outcome case passes.",
+  "publication_action": "none"
+}

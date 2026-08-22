@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-routekit 0.1.1",
+  "product_revision_sha256": "786954d9407fbcf34534653167356958411351b61bd3dc9ef80ea82b9061120e",
+  "status": "pass",
+  "source_classification": "deterministic_transparent_derivative",
+  "opaque_parent_sha256": "01684a291239db37aaa354697cf61e445be4c0635b4831de3fc54c6113772e21",
+  "transparent_master_sha256": "d6fb622e290e040c1853917c2b36436751af97843ceca3e3afbde420a7cb5cc4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "subject_bbox": [
+    64,
+    184,
+    1189,
+    1069
+  ],
+  "subject_safe_fill": {
+    "width": 0.8979,
+    "height": 0.7065
+  },
+  "geometry_mutation": "none_after_accepted_transparent_master",
+  "publication_action": "none"
+}

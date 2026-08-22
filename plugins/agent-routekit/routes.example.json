@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "routes": [
+    {
+      "id": "swift",
+      "roles": ["execute"],
+      "model": "provider/fast-model",
+      "effort": "medium",
+      "owner": "bounded-worker",
+      "independence_group": "fast-lane",
+      "cost_rank": 1,
+      "quality_level": "routine",
+      "max_complexity": "standard",
+      "max_risk": "low",
+      "capabilities": ["analysis", "structured-output"]
+    },
+    {
+      "id": "balanced",
+      "roles": ["execute"],
+      "model": "provider/balanced-model",
+      "effort": "high",
+      "owner": "general-implementer",
+      "independence_group": "balanced-lane",
+      "cost_rank": 2,
+      "quality_level": "standard",
+      "max_complexity": "standard",
+      "max_risk": "medium",
+      "capabilities": ["analysis", "coding", "research", "structured-output"]
+    },
+    {
+      "id": "deep",
+      "roles": ["execute"],
+      "model": "provider/deep-model",
+      "effort": "maximum",
+      "owner": "senior-implementer",
+      "independence_group": "deep-execution",
+      "cost_rank": 3,
+      "quality_level": "high",
+      "max_complexity": "complex",
+      "max_risk": "high",
+      "capabilities": ["analysis", "coding", "research", "structured-output", "tool-use"]
+    },
+    {
+      "id": "frontier",
+      "roles": ["execute"],
+      "model": "provider/frontier-model",
+      "effort": "maximum",
+      "owner": "frontier-orchestrator",
+      "independence_group": "frontier-execution",
+      "cost_rank": 4,
+      "quality_level": "critical",
+      "max_complexity": "novel",
+      "max_risk": "critical",
+      "capabilities": ["analysis", "coding", "research", "structured-output", "tool-use"]
+    },
+    {
+      "id": "independent-review",
+      "roles": ["verify"],
+      "model": "provider/frontier-review-model",
+      "effort": "maximum",
+      "owner": "independent-reviewer",
+      "independence_group": "frontier-review",
+      "cost_rank": 4,
+      "quality_level": "critical",
+      "max_complexity": "novel",
+      "max_risk": "critical",
+      "capabilities": ["review"]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "routekit": {
+    "color": {
+      "deepNavy": {"$type": "color", "$value": "#06235D"},
+      "signalBlue": {"$type": "color", "$value": "#0183E0"},
+      "electricCyan": {"$type": "color", "$value": "#09CEFC"},
+      "cloudWhite": {"$type": "color", "$value": "#F8FAFC"},
+      "slate": {"$type": "color", "$value": "#64748B"}
+    },
+    "shape": {
+      "tileRadiusPercent": {"$type": "number", "$value": 22},
+      "iconSafeAreaPercent": {"$type": "number", "$value": 76},
+      "strokeWidthGridUnits": {"$type": "number", "$value": 2.4}
+    }
+  }
+}

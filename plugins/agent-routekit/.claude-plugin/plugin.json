@@ -1,0 +1,18 @@
+{
+  "name": "agent-routekit",
+  "description": "Plan policy-bound agent routes without executing them.",
+  "version": "0.1.1",
+  "author": {
+    "name": "Orbral"
+  },
+  "homepage": "https://github.com/SpannDaMan/agent-routekit",
+  "repository": "https://github.com/SpannDaMan/agent-routekit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "routing",
+    "validation",
+    "claude-code",
+    "receipts"
+  ]
+}

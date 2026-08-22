@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "candidate": "agent-routekit 0.1.0",
+  "product_revision_sha256": "28fafa148f353e5f2ca5263790561d768d38278c9e8d8079c6081c5a758ac912",
+  "root": ".",
+  "checks": {
+    "required_files": "pass",
+    "portable_file_shape": "pass",
+    "text_safety": "pass",
+    "metadata": "pass",
+    "json_artifacts": "pass",
+    "logo_provenance": "pass",
+    "evidence_bindings": "pass",
+    "sample_receipt": "pass",
+    "one_command_demo": "pass",
+    "png_assets": "pass"
+  },
+  "asset_sha256": {
+    "plugins/agent-routekit/assets/Agent RouteKit Transparent Master 220826.png": "d6fb622e290e040c1853917c2b36436751af97843ceca3e3afbde420a7cb5cc4",
+    "plugins/agent-routekit/assets/icon.png": "ebf3c74497ec18ae23da937eba768166a70bfe3cb8d71c59fa2e4b67f6042882",
+    "plugins/agent-routekit/assets/logo.png": "0d26c515b4885678cbbf7e885da52a1181ad811943c4f6bbc0f4a854ea84d6b0",
+    "plugins/agent-routekit/assets/logo-dark.png": "17f2cff093ef13e98ae5748992ff468ccf9fbe9ffd14eb80efa8554d48ea97c5",
+    "plugins/agent-routekit/assets/screenshot1.png": "c2efcd22aa4a02e8ab01d5d8a78531d5881ffaf8bd3fce2ea3ca8602967c757c",
+    "plugins/agent-routekit/assets/social-preview.png": "7f33c9c493026c119cd5b954218e7a84ba1066ae27a5711d42c4c00a6126754e"
+  },
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "agent-routekit",
+  "description": "A focused marketplace for the Agent RouteKit skills-only plugin.",
+  "owner": {
+    "name": "Orbral"
+  },
+  "plugins": [
+    {
+      "name": "agent-routekit",
+      "source": "./plugins/agent-routekit",
+      "description": "Plan policy-bound agent routes without executing them.",
+      "version": "0.1.1",
+      "category": "development"
+    }
+  ]
+}

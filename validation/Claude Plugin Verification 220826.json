@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-routekit 0.1.1",
+  "product_revision_sha256": "786954d9407fbcf34534653167356958411351b61bd3dc9ef80ea82b9061120e",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "claude_marketplace_manifest",
+      "exit_code": 0,
+      "output": "Validating marketplace manifest: .\\.claude-plugin\\marketplace.json\n\n\u00e2\u02c6\u0161 Validation passed"
+    }
+  ],
+  "tool": {
+    "name": "Claude Code CLI",
+    "identity": "sha256",
+    "sha256": "7999fba95dbffe167d9e0a043f29057979a0518ebe89b60c4fcfc6401ea8c424",
+    "bytes": 160
+  },
+  "publication_action": "none"
+}

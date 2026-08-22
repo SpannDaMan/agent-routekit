@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-routekit"
+version = "0.1.1"
+description = "Plan policy-bound agent routes without executing them"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Orbral"}]
+keywords = ["agents", "codex", "model-routing", "orchestration", "receipts"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SpannDaMan/agent-routekit"
+Repository = "https://github.com/SpannDaMan/agent-routekit"
+Issues = "https://github.com/SpannDaMan/agent-routekit/issues"
+
+[project.scripts]
+agent-routekit = "routekit:main"
+
+[tool.setuptools]
+py-modules = ["routekit"]
+package-dir = {"" = "plugins/agent-routekit/scripts"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
