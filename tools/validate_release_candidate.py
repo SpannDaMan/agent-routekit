@@ -140,6 +140,7 @@ ABSOLUTE_PATH_PATTERNS = (
 
 TEXT_SUFFIXES = {".md", ".json", ".py", ".toml", ".yml", ".yaml", ".ps1", ".svg"}
 TEXT_REVISION_SUFFIXES = {".json", ".md", ".py", ".ps1", ".svg", ".toml", ".txt", ".yml", ".yaml"}
+TEXT_REVISION_NAMES = {".gitignore", "LICENSE"}
 MAX_FILE_BYTES = 1_000_000
 EXCLUDED_REVISION_PARTS = {"validation", ".git", "build", "dist", "__pycache__"}
 GENERATED_RESIDUE_PARTS = {"build", "dist", "__pycache__"}
@@ -179,7 +180,7 @@ def product_revision_sha256() -> str:
         if not path.is_file() or path.is_symlink() or path.suffix == ".pyc":
             continue
         data = path.read_bytes()
-        if path.suffix.casefold() in TEXT_REVISION_SUFFIXES or path.name == "LICENSE":
+        if path.suffix.casefold() in TEXT_REVISION_SUFFIXES or path.name in TEXT_REVISION_NAMES:
             data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
         records.append(f"{relative.as_posix()}\t{len(data)}\t{hashlib.sha256(data).hexdigest()}\n")
     return hashlib.sha256("".join(records).encode("utf-8")).hexdigest()

@@ -102,6 +102,18 @@ class ReleaseValidatorTests(unittest.TestCase):
 
         self.assertEqual(lf_revision, crlf_revision)
 
+    def test_product_revision_normalizes_gitignore_line_endings(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            text = root / ".gitignore"
+            text.write_bytes(b"build/\ndist/\n")
+            with mock.patch.object(release_validator, "ROOT", root):
+                lf_revision = release_validator.product_revision_sha256()
+                text.write_bytes(b"build/\r\ndist/\r\n")
+                crlf_revision = release_validator.product_revision_sha256()
+
+        self.assertEqual(lf_revision, crlf_revision)
+
     def test_file_shape_ignores_git_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
