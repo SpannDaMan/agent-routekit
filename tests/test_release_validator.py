@@ -90,6 +90,29 @@ class ReleaseValidatorTests(unittest.TestCase):
         finally:
             receipt.unlink()
 
+    def test_product_revision_normalizes_text_line_endings(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            text = root / "README.md"
+            text.write_bytes(b"one\ntwo\n")
+            with mock.patch.object(release_validator, "ROOT", root):
+                lf_revision = release_validator.product_revision_sha256()
+                text.write_bytes(b"one\r\ntwo\r\n")
+                crlf_revision = release_validator.product_revision_sha256()
+
+        self.assertEqual(lf_revision, crlf_revision)
+
+    def test_file_shape_ignores_git_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            pack = root / ".git" / "objects" / "pack" / "candidate.pack"
+            pack.parent.mkdir(parents=True)
+            pack.write_bytes(b"x" * (release_validator.MAX_FILE_BYTES + 1))
+            with mock.patch.object(release_validator, "ROOT", root):
+                errors = release_validator.validate_file_shape()
+
+        self.assertEqual(errors, [])
+
     def test_evidence_binding_rejects_stale_product_digest(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

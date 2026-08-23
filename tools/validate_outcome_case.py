@@ -13,6 +13,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "plugins" / "agent-routekit" / "scripts" / "routekit.py"
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+TEXT_HASH_SUFFIXES = {".json", ".md", ".py", ".toml", ".txt", ".yml", ".yaml"}
 
 
 class CaseError(ValueError):
@@ -68,7 +69,10 @@ def resolve_record(record: Any, label: str) -> tuple[Path, str]:
         raise CaseError(f"{label} escapes the repository") from exc
     if not path.is_file() or path.is_symlink():
         raise CaseError(f"{label} is missing or symlinked")
-    if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+    data = path.read_bytes()
+    if path.suffix.casefold() in TEXT_HASH_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    if hashlib.sha256(data).hexdigest() != digest:
         raise CaseError(f"{label} digest does not match")
     return path, relative.replace("\\", "/")
 
