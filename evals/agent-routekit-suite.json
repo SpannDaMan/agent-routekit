@@ -1,0 +1,37 @@
+{
+  "suite_id": "agent-routekit-public-candidate-v0.1.0",
+  "pass_threshold": 1.0,
+  "runner": {
+    "command": ["python", "tools/run_evals.py"],
+    "timeout_seconds": 30,
+    "require_exit_zero": true
+  },
+  "cases": [
+    {
+      "id": "routine-least-cost-route",
+      "task": "plugins/agent-routekit/examples/routine-task.json",
+      "expected_execution_route": "swift",
+      "expected_verification_required": false
+    },
+    {
+      "id": "high-risk-independent-review",
+      "task": "plugins/agent-routekit/examples/high-risk-task.json",
+      "expected_execution_route": "deep",
+      "expected_verification_required": true,
+      "expected_verifier_route": "independent-review"
+    },
+    {
+      "id": "missing-capability-fails-closed",
+      "task": {
+        "id": "unsupported-hardware-control",
+        "summary": "Request an unavailable capability.",
+        "complexity": "routine",
+        "risk": "low",
+        "minimum_quality": "routine",
+        "required_capabilities": ["hardware-control"],
+        "independent_review": false
+      },
+      "expected_error": "no eligible execution route"
+    }
+  ]
+}

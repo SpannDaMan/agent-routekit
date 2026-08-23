@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "routes": [
+    {
+      "id": "terra-high-review",
+      "roles": ["execute"],
+      "model": "gpt-5.6-terra",
+      "effort": "high",
+      "owner": "bounded-listing-reviewer",
+      "independence_group": "terra-execution",
+      "cost_rank": 1,
+      "quality_level": "high",
+      "max_complexity": "standard",
+      "max_risk": "high",
+      "capabilities": ["analysis", "structured-output"]
+    },
+    {
+      "id": "sol-ultra-review",
+      "roles": ["execute"],
+      "model": "gpt-5.6-sol",
+      "effort": "ultra",
+      "owner": "root-integrator",
+      "independence_group": "sol-execution",
+      "cost_rank": 2,
+      "quality_level": "critical",
+      "max_complexity": "novel",
+      "max_risk": "critical",
+      "capabilities": ["analysis", "structured-output", "coding", "tool-use"]
+    },
+    {
+      "id": "nemotron-independent-review",
+      "roles": ["verify"],
+      "model": "nemotron_3_super",
+      "effort": "high",
+      "owner": "independent-release-reviewer",
+      "independence_group": "nemotron-verification",
+      "cost_rank": 1,
+      "quality_level": "critical",
+      "max_complexity": "novel",
+      "max_risk": "critical",
+      "capabilities": ["review"]
+    }
+  ]
+}

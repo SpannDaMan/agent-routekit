@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "0000000000000000",
+  "evidence_source": "Replace with an independent host-neutral evidence reference before release.",
+  "observed_route_id": "replace-with-selected-route-id",
+  "metrics": [
+    {"name": "replace-with-metric", "unit": "replace-with-unit", "baseline": 0, "observed": 0, "direction": "context_only"}
+  ],
+  "limitations": ["Template only; this file is not runtime evidence and must not satisfy the publication gate."],
+  "routekit_non_collection_statement": "RouteKit did not collect or execute this outcome."
+}

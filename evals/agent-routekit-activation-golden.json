@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "suite_id": "agent-routekit-activation-v1",
+  "plugin": "agent-routekit",
+  "claim_boundary": "This receipt validates the declared activation contract and case inventory only; it does not prove model selection, semantic quality, runtime execution, or downstream compliance.",
+  "cases": [
+    {
+      "id": "RK-D01",
+      "class": "direct",
+      "prompt": "Recommend a planning route for this task.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D02",
+      "class": "direct",
+      "prompt": "Compare these candidate routes under the declared policy.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D03",
+      "class": "direct",
+      "prompt": "Produce a policy-bound decision receipt.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D04",
+      "class": "direct",
+      "prompt": "Validate this RouteKit registry before planning.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D05",
+      "class": "direct",
+      "prompt": "Explain why this candidate route was excluded.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D06",
+      "class": "direct",
+      "prompt": "Plan an executor and independent verifier for this high-risk task.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D07",
+      "class": "direct",
+      "prompt": "Show the assumptions and unresolved evidence in this route decision.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D08",
+      "class": "direct",
+      "prompt": "Attach this independent outcome to the prior route receipt.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D09",
+      "class": "direct",
+      "prompt": "Reconcile this planning recommendation with the observed runtime outcome.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-D10",
+      "class": "direct",
+      "prompt": "List eligible alternatives without dispatching any provider.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I01",
+      "class": "indirect",
+      "prompt": "Which path should I choose for this agent task?",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I02",
+      "class": "indirect",
+      "prompt": "I need a transparent reason for selecting one model plan over another.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I03",
+      "class": "indirect",
+      "prompt": "Can you compare cost and quality constraints before anyone runs a model?",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I04",
+      "class": "indirect",
+      "prompt": "Show me why the cheaper route is or is not eligible.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I05",
+      "class": "indirect",
+      "prompt": "I need a reviewable planning receipt for this high-risk request.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I06",
+      "class": "indirect",
+      "prompt": "Help me separate planning policy from runtime execution.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I07",
+      "class": "indirect",
+      "prompt": "Which independent reviewer choices remain after this executor is selected?",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I08",
+      "class": "indirect",
+      "prompt": "Can we later compare this plan with independently observed results?",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I09",
+      "class": "indirect",
+      "prompt": "Make the route decision deterministic and provider-neutral.",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-I10",
+      "class": "indirect",
+      "prompt": "What evidence is still missing before this route recommendation is trustworthy?",
+      "expected_activation": true,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N01",
+      "class": "negative",
+      "prompt": "Run the selected model and return its answer.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N02",
+      "class": "negative",
+      "prompt": "Dispatch this request to every provider for a benchmark.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N03",
+      "class": "negative",
+      "prompt": "Claim the cheapest route produced the best runtime quality.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N04",
+      "class": "negative",
+      "prompt": "Call provider APIs to check current pricing.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N05",
+      "class": "negative",
+      "prompt": "Execute a high-risk route without an independent verifier.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N06",
+      "class": "negative",
+      "prompt": "Invent a successful runtime outcome for this receipt.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N07",
+      "class": "negative",
+      "prompt": "Publish the chosen route and spend money automatically.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N08",
+      "class": "negative",
+      "prompt": "Scan this skill for dangerous install commands.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N09",
+      "class": "negative",
+      "prompt": "Record a receipt for commands that already ran.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    },
+    {
+      "id": "RK-N10",
+      "class": "negative",
+      "prompt": "Compile this long request and preserve its requirements.",
+      "expected_activation": false,
+      "expected_behavior": "Evaluate declared planning policy and produce a transparent decision receipt with candidates, exclusions, assumptions, alternatives, and no-execution boundary.",
+      "prohibited_behavior": "Do not call providers, execute models, dispatch runtimes, benchmark live systems, fabricate outcomes, or claim runtime quality or cost results.",
+      "evidence_oracle": "The Policy-Bound Route Receipt is planning evidence only; independent outcome evidence must be supplied separately and reconciled deterministically."
+    }
+  ]
+}

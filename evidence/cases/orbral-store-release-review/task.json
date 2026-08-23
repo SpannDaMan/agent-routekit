@@ -1,0 +1,9 @@
+{
+  "id": "orbral-store-release-decision",
+  "summary": "Review the frozen five-plugin listing portfolio, identify the eligible submission set, and preserve every evidence hold before provider upload.",
+  "complexity": "standard",
+  "risk": "high",
+  "minimum_quality": "high",
+  "required_capabilities": ["analysis", "structured-output"],
+  "independent_review": true
+}

@@ -1,0 +1,9 @@
+{
+  "id": "format-release-notes",
+  "summary": "Turn a verified change list into structured release notes.",
+  "complexity": "routine",
+  "risk": "low",
+  "minimum_quality": "routine",
+  "required_capabilities": ["structured-output"],
+  "independent_review": false
+}

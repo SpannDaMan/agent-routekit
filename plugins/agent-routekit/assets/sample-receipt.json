@@ -1,0 +1,43 @@
+{
+  "receipt_version": "1.0",
+  "tool": {"name": "agent-routekit", "version": "0.1.1"},
+  "decision_id": "20fcf65b051dd038",
+  "task": {"id": "review-auth-migration", "fingerprint": "a55ff28aa678cc3c1689888e2ac13ee30b85181695d83879387638b480c46f69"},
+  "policy": {
+    "registry_fingerprint": "9c81487fa0ba320589c3851795468639d6ce9b6cb31807fd4e736339ab571522",
+    "required_quality_rank": 3,
+    "complexity": "complex",
+    "risk": "high",
+    "required_capabilities": ["analysis", "coding", "tool-use"],
+    "independent_review_required": true
+  },
+  "fingerprints": {
+    "policy": "5a91e727e6e3d434d066f2f9afbe6ccddce874c12b431075a1831a8266b58c72",
+    "registry": "9c81487fa0ba320589c3851795468639d6ce9b6cb31807fd4e736339ab571522"
+  },
+  "execution": {"route_id": "deep", "model": "provider/deep-model", "effort": "maximum", "owner": "senior-implementer", "cost_rank": 3, "quality_level": "high", "independence_group": "deep-execution"},
+  "eligible_alternatives": [
+    {"route_id": "frontier", "model": "provider/frontier-model", "effort": "maximum", "owner": "frontier-orchestrator", "cost_rank": 4, "quality_level": "critical", "independence_group": "frontier-execution"}
+  ],
+  "verification": {
+    "required": true,
+    "route": {"route_id": "independent-review", "model": "provider/frontier-review-model", "effort": "maximum", "owner": "independent-reviewer", "cost_rank": 4, "quality_level": "critical", "independence_group": "frontier-review"},
+    "rejected_routes": [
+      {"route_id": "swift", "reasons": ["does not declare the verify role", "quality level is below the derived floor", "complexity ceiling is too low", "risk ceiling is too low", "missing review capability"]},
+      {"route_id": "balanced", "reasons": ["does not declare the verify role", "quality level is below the derived floor", "complexity ceiling is too low", "risk ceiling is too low", "missing review capability"]},
+      {"route_id": "deep", "reasons": ["does not declare the verify role", "missing review capability", "not independent from the execution route"]},
+      {"route_id": "frontier", "reasons": ["does not declare the verify role", "missing review capability"]}
+    ]
+  },
+  "reason": "Selected deep as the lowest-cost eligible execution route with an eligible independent verifier after enforcing quality floor 3/4, complex complexity, high risk, and all required capabilities. Selected independent-review as the lowest-cost eligible independent verifier.",
+  "rejected_execution_routes": [
+    {"route_id": "swift", "reasons": ["quality level is below the derived floor", "complexity ceiling is too low", "risk ceiling is too low", "missing capabilities: coding, tool-use"]},
+    {"route_id": "balanced", "reasons": ["quality level is below the derived floor", "complexity ceiling is too low", "risk ceiling is too low", "missing capabilities: tool-use"]},
+    {"route_id": "frontier", "reasons": ["eligible but ranked after the selected lower-cost route"]},
+    {"route_id": "independent-review", "reasons": ["does not declare the execute role", "missing capabilities: analysis, coding, tool-use"]}
+  ],
+  "limitations": ["This receipt records a planning decision; it does not prove runtime model selection.", "Model and effort values are registry labels whose availability must be verified by the host."],
+  "assumptions": ["Registry labels and policy inputs are caller-supplied declarations.", "Cost rank is ordinal policy data, not a live provider price."],
+  "unresolved_evidence": ["Selected route availability at execution time.", "Independent runtime outcome and observed cost or quality metrics."],
+  "no_execution_boundary": "Local Model Route Planner planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."
+}

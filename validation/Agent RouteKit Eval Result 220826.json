@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-routekit 0.1.1",
+  "suite_id": "agent-routekit-public-candidate-v0.1.0",
+  "status": "pass",
+  "case_count": 3,
+  "results": [
+    {
+      "id": "routine-least-cost-route",
+      "status": "pass",
+      "decision_id": "9cf338ed69e264fa"
+    },
+    {
+      "id": "high-risk-independent-review",
+      "status": "pass",
+      "decision_id": "20fcf65b051dd038"
+    },
+    {
+      "id": "missing-capability-fails-closed",
+      "status": "pass",
+      "expected_error": "no eligible execution route"
+    }
+  ],
+  "publication_action": "none",
+  "product_revision_sha256": "d5d80bbb8495ff1a0936d621872bb9c63f2c8e3b31ffffc2cd7c53297afd4f7e"
+}

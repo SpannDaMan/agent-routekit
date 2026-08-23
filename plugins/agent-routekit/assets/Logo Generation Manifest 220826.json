@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "product": "Agent RouteKit",
+  "canonical_master": "plugins/agent-routekit/assets/Agent RouteKit Transparent Master 220826.png",
+  "master_sha256": "d6fb622e290e040c1853917c2b36436751af97843ceca3e3afbde420a7cb5cc4",
+  "master_width": 1254,
+  "master_height": 1254,
+  "master_format": "image/png",
+  "alpha_status": "RGBA PNG with transparent corners and a large safe-fill subject",
+  "source_type": "deterministic_transparent_derivative",
+  "source_background_policy": "transparent_source",
+  "generation_mode": "Accepted transparent derivative of a GPT Image 2 parent; deterministic background extraction receipt retained separately",
+  "opaque_parent_sha256": "01684a291239db37aaa354697cf61e445be4c0635b4831de3fc54c6113772e21",
+  "extraction_receipt": "validation/Transparent Asset Extraction Receipt 220826.json",
+  "local_edit_status": "background_extraction_and_safe_fill_only",
+  "source_crop": {
+    "mode": "full_square_source",
+    "x": 0,
+    "y": 0,
+    "width": 1254,
+    "height": 1254,
+    "policy": "Use the accepted transparent source without cropping or geometry changes."
+  },
+  "semantic_quality": {
+    "visual_identity": "three candidate routes enter a gate and one verified route exits in a navy-blue-cyan palette",
+    "safe_fill": "subject width is approximately 90% of the square canvas"
+  },
+  "canonical_source_policy": "The transparent master is a derivative, not an unedited original source. Local tools may verify, resize, and place it; they may not redraw, trace, recolor, inpaint, or originate alternate geometry.",
+  "render_config": {
+    "product_name": "Agent RouteKit",
+    "tagline": "Quality-first routing for Codex.",
+    "body": "Choose the least-cost eligible route. Show the receipt.",
+    "panel_heading": "ROUTING RECEIPT",
+    "panel_lines": ["route  local plan", "policy  quality-first", "verification  receipt-bound", "fallback  fail-closed"],
+    "light_background": "#F8FAFC",
+    "dark_background": "#06235D",
+    "light_text": "#F8FAFC",
+    "dark_text": "#06235D",
+    "accent": "#09CEFC",
+    "secondary": "#0183E0",
+    "card_background": "#07357F"
+  }
+}

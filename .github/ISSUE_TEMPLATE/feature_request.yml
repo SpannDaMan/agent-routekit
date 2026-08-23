@@ -1,0 +1,28 @@
+name: Feature request
+description: Propose a focused improvement to routing or receipt evidence.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the concrete routing or verification problem.
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Acceptance proof
+      description: What deterministic test or receipt change would prove this works?
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: This request does not require credentials or private task data.
+          required: true
+        - label: This request preserves fail-closed high-risk verification.
+          required: true

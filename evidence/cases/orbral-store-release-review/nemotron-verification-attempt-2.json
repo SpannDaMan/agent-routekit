@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "artifact": "Nemotron independent verification attempt 2",
+  "request_id": "34e857eed2244e28897a2731cb5e272a",
+  "route": "premium_super",
+  "provider_id": "nemotron_3_super",
+  "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+  "route_contract_ok": true,
+  "fallback_used": false,
+  "status": "ok",
+  "result": {
+    "decision_id": "d58684e29e8d881e",
+    "observed_route_id": "terra-high-review",
+    "verification_route_id": "premium_super",
+    "route_match": false,
+    "independent_review_required": true,
+    "independent_review_executed": true,
+    "evidence_hold_preserved": true,
+    "verification_status": "pass"
+  },
+  "mapping_note": "The provider route premium_super resolves to provider_id nemotron_3_super, which is the runtime implementation of the registry label nemotron-independent-review. The raw model route_match field is preserved as false; deterministic reconciliation records the label-to-provider mapping separately."
+}

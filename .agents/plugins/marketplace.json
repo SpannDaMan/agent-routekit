@@ -1,0 +1,21 @@
+{
+  "name": "agent-routekit",
+  "interface": {
+    "displayName": "Local Model Route Planner"
+  },
+  "plugins": [
+    {
+      "name": "agent-routekit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-routekit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
+      "description": "Choose an eligible model or agent route and explain the decision before execution."
+    }
+  ]
+}

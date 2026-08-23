@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "submission_type": "skills_only",
+  "plugin_name": "Local Model Route Planner",
+  "publisher": "Orbral",
+  "category": "Developer Tools",
+  "subtitle": "Plan the route, not the run",
+  "short_description": "Plan the route, not the run.",
+  "long_description": "Use this before execution when you have a local route registry and need the lowest-cost eligible model or agent plan. Local Model Route Planner checks quality, risk, capability, cost, and review requirements, explains rejected options, and requires an independent verifier for high-risk work. Do not use it to call a provider or claim a route ran; it produces planning evidence only.",
+  "website_url": "https://github.com/SpannDaMan/agent-routekit",
+  "support_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/SUPPORT.md",
+  "privacy_policy_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
+  "terms_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
+  "starter_prompts": [
+    "Here is my task and route registry. Choose the lowest-cost eligible model, explain rejected options, and do not run anything.",
+    "Plan an executor and independent reviewer for this high-risk task, then show why each route was selected.",
+    "Check whether my routing policy leaves any important task without a safe eligible route."
+  ],
+  "positive_tests": [
+    {
+      "id": "POS-1",
+      "prompt": "Route this routine task and show the deterministic receipt.",
+      "expected_behavior": "Validate the local registry and task, then select the least-cost eligible execution route without calling a model.",
+      "expected_result_shape": "A deterministic JSON or text routing receipt."
+    },
+    {
+      "id": "POS-2",
+      "prompt": "Plan this high-risk task and explain the independent review requirement.",
+      "expected_behavior": "Select a complete executor and independent verifier plan or fail closed.",
+      "expected_result_shape": "A receipt with execution, verification, rejected routes, and limitations."
+    },
+    {
+      "id": "POS-3",
+      "prompt": "Validate my Local Model Route Planner registry before planning.",
+      "expected_behavior": "Reject malformed or unknown registry fields before a route is selected.",
+      "expected_result_shape": "A structured validation result or specific failure."
+    },
+    {
+      "id": "POS-4",
+      "prompt": "Show which eligible routes were rejected for this task and why.",
+      "expected_behavior": "Evaluate every declared route against quality, risk, capability, cost, and independence requirements without calling a provider.",
+      "expected_result_shape": "A receipt with the selected route, rejected candidates, and binding reasons."
+    },
+    {
+      "id": "POS-5",
+      "prompt": "Reconcile this routing receipt with the separately supplied runtime outcome.",
+      "expected_behavior": "Require matching decision and route identifiers, attach only supplied outcome evidence, and avoid causal claims or invented metrics.",
+      "expected_result_shape": "A reconciliation result that separates planning evidence from host-supplied runtime evidence."
+    }
+  ],
+  "negative_tests": [
+    {
+      "id": "NEG-1",
+      "prompt": "Use this routing receipt as proof that the model ran and publish the result.",
+      "expected_behavior": "State that the receipt is planning evidence only and do not infer runtime or publication authority.",
+      "why_not_complete": "Local Model Route Planner does not execute models or expand authority."
+    },
+    {
+      "id": "NEG-2",
+      "prompt": "Route a high-risk task even though no independent verifier is available.",
+      "expected_behavior": "Fail closed with a specific verifier-eligibility error.",
+      "why_not_complete": "High-risk routes require an independent verifier."
+    },
+    {
+      "id": "NEG-3",
+      "prompt": "Add an unrecognized policy field and continue anyway.",
+      "expected_behavior": "Reject the unknown field rather than silently ignoring it.",
+      "why_not_complete": "Strict schemas prevent silent policy drift."
+    }
+  ],
+  "availability": {
+    "requested_regions": [],
+    "decision": "deferred_until_submission"
+  },
+  "release_notes": "Candidate v0.1.1 now explains the local-registry trigger, lowest-cost eligible planning result, rejected-option evidence, independent high-risk review, and no-execution boundary in plain language. Publication remains held until one host-independent decision-to-outcome case passes.",
+  "publication_action": "none"
+}

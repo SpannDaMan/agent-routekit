@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "required_case_count": 1,
+  "cases": [
+    {
+      "id": "orbral-store-release-review-20260823",
+      "planning_receipt": {"path": "evidence/cases/orbral-store-release-review/planning-receipt.json", "sha256": "ef3115ab5a3dfc78c8687c57d62bc9bef952206b002fb4ef20e2edc5d655e67f"},
+      "outcome_attachment": {"path": "evidence/cases/orbral-store-release-review/outcome-attachment.json", "sha256": "9a5290f190036cbbd8c89b853d8dd712eddf32e57094faff23c630b199b4f31c"},
+      "reconciliation_receipt": {"path": "evidence/cases/orbral-store-release-review/reconciliation-receipt.json", "sha256": "9b7e3c1c5920cf0091156429ac181c15cb97cae3e4087bd5c114804ecbd7496d"},
+      "host_independent": true,
+      "evidence_source": "evidence/cases/orbral-store-release-review/independent-evidence.json"
+    }
+  ],
+  "claim_boundary": "One host-independent procedural outcome case binds a pre-execution plan to a separately executed Terra review, an exact Nemotron verifier route, and deterministic non-causal reconciliation. It does not establish savings, demand, ranking, provider acceptance, causal quality improvement, or live cost accuracy."
+}

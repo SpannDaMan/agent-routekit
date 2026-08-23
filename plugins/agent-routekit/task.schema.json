@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/task.schema.json",
+  "title": "Local Model Route Planner Task",
+  "type": "object",
+  "required": [
+    "id",
+    "summary",
+    "complexity",
+    "risk",
+    "minimum_quality",
+    "required_capabilities",
+    "independent_review"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "complexity": {"enum": ["routine", "standard", "complex", "novel"]},
+    "risk": {"enum": ["low", "medium", "high", "critical"]},
+    "minimum_quality": {"enum": ["routine", "standard", "high", "critical"]},
+    "required_capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "independent_review": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,105 @@
+{
+  "receipt_version": "1.0",
+  "tool": {
+    "name": "agent-routekit",
+    "version": "0.1.1"
+  },
+  "decision_id": "d58684e29e8d881e",
+  "task": {
+    "id": "orbral-store-release-decision",
+    "fingerprint": "fdffe04e693e3e44d7de5ec1cbf74dddf5d37224694757476794aeabd83bafca"
+  },
+  "policy": {
+    "registry_fingerprint": "a2e27d128b9d606dcc5e0a349182e35517ba23b10e6d1b65269d79c51da752f8",
+    "required_quality_rank": 3,
+    "complexity": "standard",
+    "risk": "high",
+    "required_capabilities": [
+      "analysis",
+      "structured-output"
+    ],
+    "independent_review_required": true
+  },
+  "fingerprints": {
+    "policy": "77b5bff8b3aec7ed4b1f8c5733b3492a5489630a6a46d08843cc684641d7f8af",
+    "registry": "a2e27d128b9d606dcc5e0a349182e35517ba23b10e6d1b65269d79c51da752f8"
+  },
+  "execution": {
+    "route_id": "terra-high-review",
+    "model": "gpt-5.6-terra",
+    "effort": "high",
+    "owner": "bounded-listing-reviewer",
+    "cost_rank": 1,
+    "quality_level": "high",
+    "independence_group": "terra-execution"
+  },
+  "eligible_alternatives": [
+    {
+      "route_id": "sol-ultra-review",
+      "model": "gpt-5.6-sol",
+      "effort": "ultra",
+      "owner": "root-integrator",
+      "cost_rank": 2,
+      "quality_level": "critical",
+      "independence_group": "sol-execution"
+    }
+  ],
+  "verification": {
+    "required": true,
+    "route": {
+      "route_id": "nemotron-independent-review",
+      "model": "nemotron_3_super",
+      "effort": "high",
+      "owner": "independent-release-reviewer",
+      "cost_rank": 1,
+      "quality_level": "critical",
+      "independence_group": "nemotron-verification"
+    },
+    "rejected_routes": [
+      {
+        "route_id": "terra-high-review",
+        "reasons": [
+          "does not declare the verify role",
+          "missing review capability",
+          "not independent from the execution route"
+        ]
+      },
+      {
+        "route_id": "sol-ultra-review",
+        "reasons": [
+          "does not declare the verify role",
+          "missing review capability"
+        ]
+      }
+    ]
+  },
+  "reason": "Selected terra-high-review as the lowest-cost eligible execution route with an eligible independent verifier after enforcing quality floor 3/4, standard complexity, high risk, and all required capabilities. Selected nemotron-independent-review as the lowest-cost eligible independent verifier.",
+  "rejected_execution_routes": [
+    {
+      "route_id": "sol-ultra-review",
+      "reasons": [
+        "eligible but ranked after the selected lower-cost route"
+      ]
+    },
+    {
+      "route_id": "nemotron-independent-review",
+      "reasons": [
+        "does not declare the execute role",
+        "missing capabilities: analysis, structured-output"
+      ]
+    }
+  ],
+  "limitations": [
+    "This receipt records a planning decision; it does not prove runtime model selection.",
+    "Model and effort values are registry labels whose availability must be verified by the host."
+  ],
+  "assumptions": [
+    "Registry labels and policy inputs are caller-supplied declarations.",
+    "Cost rank is ordinal policy data, not a live provider price."
+  ],
+  "unresolved_evidence": [
+    "Selected route availability at execution time.",
+    "Independent runtime outcome and observed cost or quality metrics."
+  ],
+  "no_execution_boundary": "Local Model Route Planner planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."
+}

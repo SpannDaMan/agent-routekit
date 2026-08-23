@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "d58684e29e8d881e",
+  "observed_route_id": "terra-high-review",
+  "eligible_submission_set": [],
+  "held_submission_set": [
+    {
+      "plugin_name": "Prompt Optimizer",
+      "reason": "Copy clarity passes, but the corrected evaluation and trust ballots record no admissible 10-direct, 10-indirect, 10-negative activation-result evidence for this frozen candidate."
+    },
+    {
+      "plugin_name": "Skill Risk Check",
+      "reason": "Copy clarity passes, but the corrected evaluation and trust ballots record no admissible 10-direct, 10-indirect, 10-negative activation-result evidence for this frozen candidate."
+    },
+    {
+      "plugin_name": "Completion Receipt",
+      "reason": "Copy clarity passes, but the corrected evaluation and trust ballots record no admissible 10-direct, 10-indirect, 10-negative activation-result evidence for this frozen candidate."
+    },
+    {
+      "plugin_name": "Local Model Route Planner",
+      "reason": "Copy clarity and current listing validation pass, but the frozen release hold remains at 0 of 1 required host-independent measurable decision-to-outcome case; activation-result evidence is also not established."
+    },
+    {
+      "plugin_name": "Anti-Churn",
+      "reason": "Copy clarity and its current revision validation receipt pass, but the corrected evaluation and trust ballots record no admissible 10-direct, 10-indirect, 10-negative activation-result evidence for this frozen candidate."
+    }
+  ],
+  "copy_score_floor": 90,
+  "focus_category_floor": 9,
+  "release_checks": {
+    "current_listing_validator": {
+      "status": "pass",
+      "command": "python ops/xfn/workflows/plugin-portfolio-ranking-upgrade-20260822/continuation-20260823/store-publication-20260823/validate_portfolio_listing_copy.py",
+      "candidate_bundle_hash": "4497725d0c4a434905b96163f25deb9f2403a900a69c7662fd2ab6af00337388",
+      "products_checked": 5,
+      "copy_scores": {
+        "Prompt Optimizer": 98,
+        "Skill Risk Check": 98,
+        "Completion Receipt": 97,
+        "Local Model Route Planner": 98,
+        "Anti-Churn": 98
+      },
+      "meaning": "Current listing metadata, parity, reviewer-case shape, activation-case counts, and copy scorecards pass; this is not installed-root behavior, activation-result, or release proof."
+    },
+    "corrected_focus_review": {
+      "status": "hold",
+      "copy_clarity": "pass",
+      "installability_and_release_proof": "fail",
+      "blocking_evidence": [
+        "Evaluation Reliability Ballot Corrected 230826.json records a portfolio P1: required per-product direct, indirect, and negative activation-result coverage is not evidenced, with installability_and_release_evidence scored 2.",
+        "Trust Release Ballot Corrected 230826.json independently records the same activation-coverage gap and treats five-positive/three-negative reviewer cases as insufficient evidence.",
+        "Architecture Runtime Ballot Corrected 230826.json records the Route Planner's missing host-independent measurable outcome case and missing installed-root validation evidence.",
+        "Economics Adoption Ballot Corrected 230826.json retains Route Planner outside the qualified install set pending the outcome case."
+      ],
+      "focus_scores_below_floor": [
+        "Evaluation Reliability: starter_prompt_naturalness=8; installability_and_release_evidence=2.",
+        "Trust Release: trust_and_claim_safety=8; installability_and_release_evidence=7.",
+        "Economics Adoption: installability_and_release_evidence=8.",
+        "Architecture Runtime: installability_and_release_evidence=5."
+      ]
+    },
+    "existing_revision_validation_receipts": {
+      "Prompt Optimizer": "pass: Release Candidate Validation 220826.json; product_revision_sha256=b40320f110c17523017c65eca0a3667d393ab114a1338a97b15f7a7d719602d5",
+      "Skill Risk Check": "pass: Release Candidate Validation 220826.json; product_revision_sha256=2db19dd37963189b016fe7521f7ab5633a10d2e460307f0425649c66c986f28c",
+      "Completion Receipt": "pass: Release Candidate Validation 220826.json; product_revision_sha256=5d9126bd4f10d31a88e3b0c338f246894c5b7cb702b17c1d50ec9df044bf816f",
+      "Local Model Route Planner": "pass: Release Candidate Validation 220826.json; product_revision_sha256=28fafa148f353e5f2ca5263790561d768d38278c9e8d8079c6081c5a758ac912",
+      "Anti-Churn": "pass: Release Candidate Validation 230826.json; product_revision_sha256=c941574f1cb4c7c36b8491ca5fadc9388e5f8cce6853d88e308a9c89ac428e38"
+    },
+    "route_planner_outcome_hold": {
+      "status": "hold",
+      "required_case_count": 1,
+      "completed_case_count": 0,
+      "decision": "Local Model Route Planner remains excluded until a host-independent measurable decision-to-outcome case is admitted and independently verified."
+    }
+  },
+  "limitations": [
+    "The Local Model Route Planner receipt is planning evidence only and does not prove runtime model selection, execution, outcome, cost, or quality.",
+    "Corrected focus ballots are source-grounded synthetic private QA; they establish neither demand, conversion, ranking, installs, retention, satisfaction, savings, willingness to pay, nor causation.",
+    "Passing copy, metadata, package, or revision validation does not waive missing installed-root, activation-result, or release-evidence requirements.",
+    "No provider was called and no runtime model or effort is asserted by this review; independent verification remains required by the planner receipt."
+  ],
+  "evidence_source": {
+    "planning_receipt": "../public-release-staging-20260822/agent-routekit/evidence/cases/orbral-store-release-review/planning-receipt.json",
+    "listing_validator": "ops/xfn/workflows/plugin-portfolio-ranking-upgrade-20260822/continuation-20260823/store-publication-20260823/validate_portfolio_listing_copy.py",
+    "copy_scorecards": "ops/xfn/workflows/plugin-portfolio-ranking-upgrade-20260822/continuation-20260823/store-publication-20260823/copy-audit/",
+    "corrected_focus_ballots": "ops/xfn/workflows/plugin-portfolio-ranking-upgrade-20260822/continuation-20260823/store-publication-20260823/focus-group/",
+    "current_submissions": [
+      "../public-release-candidates/prompt-optimizer-repo/submission/openai-plugin-submission.json",
+      "../public-release-staging-20260822/agent-skillguard/submission/openai-plugin-submission.json",
+      "../public-release-staging-20260822/agent-shipproof/submission/openai-plugin-submission.json",
+      "../public-release-staging-20260822/agent-routekit/submission/openai-plugin-submission.json",
+      "../public-release-candidates/agent-churn-control-repo/submission/openai-plugin-submission.json"
+    ],
+    "revision_validation_receipts": "candidate validation/Release Candidate Validation*.json files listed in release_checks.existing_revision_validation_receipts"
+  }
+}
