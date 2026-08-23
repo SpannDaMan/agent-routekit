@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/task.schema.json",
-  "title": "Agent RouteKit Task",
+  "title": "Local Model Route Planner Task",
   "type": "object",
   "required": [
     "id",

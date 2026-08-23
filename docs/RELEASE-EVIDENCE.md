@@ -1,6 +1,6 @@
 # Release Evidence Contract
 
-Agent RouteKit binds generated local evidence to a non-self-referential product revision.
+Local Model Route Planner binds generated local evidence to a non-self-referential product revision.
 
 ## Product revision digest
 

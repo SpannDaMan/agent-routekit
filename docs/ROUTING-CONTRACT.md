@@ -1,6 +1,6 @@
 # Routing Contract
 
-Agent RouteKit separates eligibility from ranking.
+Local Model Route Planner separates eligibility from ranking.
 
 ## 1. Normalize inputs
 

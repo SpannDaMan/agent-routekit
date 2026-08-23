@@ -1,6 +1,15 @@
 {
   "schema_version": "1.0",
   "required_case_count": 1,
-  "cases": [],
-  "claim_boundary": "No independent runtime outcome is bundled. Publication remains held until one host-independent decision-to-outcome case binds a declared baseline, planning receipt, independently supplied outcome, and deterministic reconciliation receipt."
+  "cases": [
+    {
+      "id": "orbral-store-release-review-20260823",
+      "planning_receipt": {"path": "evidence/cases/orbral-store-release-review/planning-receipt.json", "sha256": "05c3ac9b9593ce00c6a4ed3823c6ca14c6885cee0683d471c86302dc85025059"},
+      "outcome_attachment": {"path": "evidence/cases/orbral-store-release-review/outcome-attachment.json", "sha256": "9a5290f190036cbbd8c89b853d8dd712eddf32e57094faff23c630b199b4f31c"},
+      "reconciliation_receipt": {"path": "evidence/cases/orbral-store-release-review/reconciliation-receipt.json", "sha256": "9b7e3c1c5920cf0091156429ac181c15cb97cae3e4087bd5c114804ecbd7496d"},
+      "host_independent": true,
+      "evidence_source": "evidence/cases/orbral-store-release-review/independent-evidence.json"
+    }
+  ],
+  "claim_boundary": "One host-independent procedural outcome case binds a pre-execution plan to a separately executed Terra review, an exact Nemotron verifier route, and deterministic non-causal reconciliation. It does not establish savings, demand, ranking, provider acceptance, causal quality improvement, or live cost accuracy."
 }

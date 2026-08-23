@@ -1,11 +1,11 @@
 ---
 name: agent-routekit
-description: "Plan the route, not the run: deterministically evaluate declared model or agent policies, require independent review for high-risk work, emit a Policy-Bound Route Receipt, or reconcile it with independently supplied outcome evidence without executing a provider."
+description: "Use before execution with a local route registry. Choose the lowest-cost eligible model or agent plan, explain rejected options, require independent review for high-risk work, and emit planning evidence without calling a provider or claiming the route ran."
 ---
 
-# Agent RouteKit
+# Local Model Route Planner
 
-Agent RouteKit is a planning and evidence skill. It does not invoke a model runtime or grant execution authority.
+Local Model Route Planner is a planning and evidence skill. It does not invoke a model runtime or grant execution authority.
 
 ## Procedure
 

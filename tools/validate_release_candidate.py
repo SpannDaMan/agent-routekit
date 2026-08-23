@@ -404,13 +404,8 @@ def validate_metadata() -> list[str]:
         value = interface.get(field)
         if not isinstance(value, str) or not (PLUGIN / value).is_file():
             errors.append(f"plugin.json interface.{field} must reference an existing asset")
-    screenshots = interface.get("screenshots")
-    if not isinstance(screenshots, list) or not screenshots:
-        errors.append("plugin.json interface.screenshots must contain at least one asset")
-    else:
-        for value in screenshots:
-            if not isinstance(value, str) or not (PLUGIN / value).is_file():
-                errors.append(f"plugin.json screenshot is missing: {value!r}")
+    if "screenshots" in interface:
+        errors.append("skills-only plugin must not declare interface.screenshots")
 
     if marketplace.get("name") != "agent-routekit":
         errors.append("marketplace name must be agent-routekit")
@@ -448,8 +443,8 @@ def validate_metadata() -> list[str]:
         claude_marketplace = claude_plugin = submission = {}
     if not isinstance(claude_marketplace, dict) or claude_marketplace.get("name") != "agent-routekit":
         errors.append("Claude marketplace name must be agent-routekit")
-    if not isinstance(claude_plugin, dict) or claude_plugin.get("name") != "agent-routekit":
-        errors.append("Claude plugin name must be agent-routekit")
+    if not isinstance(claude_plugin, dict) or claude_plugin.get("name") != "local-model-route-planner":
+        errors.append("Claude plugin name must be local-model-route-planner")
     if isinstance(claude_plugin, dict) and claude_plugin.get("version") != manifest.get("version"):
         errors.append("Claude plugin version must match Codex plugin version")
     if not isinstance(submission, dict) or submission.get("submission_type") != "skills_only":
@@ -459,8 +454,14 @@ def validate_metadata() -> list[str]:
             errors.append("OpenAI submission publisher must be Orbral")
         if submission.get("category") != "Developer Tools":
             errors.append("OpenAI submission category must be Developer Tools")
-        if submission.get("plugin_name") != "Agent RouteKit":
-            errors.append("OpenAI submission plugin_name must be Agent RouteKit")
+        if submission.get("plugin_name") != "Local Model Route Planner":
+            errors.append("OpenAI submission plugin_name must be Local Model Route Planner")
+        if submission.get("short_description") != "Plan the route, not the run.":
+            errors.append("OpenAI submission short_description must match the public subtitle")
+        if len(submission.get("starter_prompts", [])) != 3:
+            errors.append("OpenAI submission must contain three starter prompts")
+        if len(submission.get("positive_tests", [])) != 5 or len(submission.get("negative_tests", [])) != 3:
+            errors.append("OpenAI submission must contain five positive and three negative cases")
         if any("mcp" in str(key).lower() for key in submission):
             errors.append("OpenAI submission must not declare an MCP package")
 
@@ -753,9 +754,9 @@ def main() -> int:
     if args.json:
         print(json.dumps(result, indent=2))
     elif result["status"] == "pass":
-        print("PASS: Agent RouteKit release candidate")
+        print("PASS: Local Model Route Planner release candidate")
     else:
-        print("FAIL: Agent RouteKit release candidate", file=sys.stderr)
+        print("FAIL: Local Model Route Planner release candidate", file=sys.stderr)
         for error in result["errors"]:
             print(f"- {error}", file=sys.stderr)
     return 0 if result["status"] == "pass" else 1

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "artifact": "Nemotron independent verification attempt 1",
+  "request_id": "6999714e19924b6ebc7e69fc42d9b859",
+  "route": "premium_super",
+  "provider_id": "nemotron_3_super",
+  "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+  "route_contract_ok": true,
+  "fallback_used": false,
+  "status": "ok",
+  "result": {
+    "decision_id": "d58684e29e8d881e",
+    "observed_route_id": "terra-high-review",
+    "verification_route_id": "nemotron-independent-review",
+    "route_match": true,
+    "independent_review_required": true,
+    "independent_review_executed": false,
+    "evidence_hold_preserved": true,
+    "verification_status": "fail"
+  },
+  "limitation": "The first verifier did not receive evidence of its own execution and therefore failed closed."
+}

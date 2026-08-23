@@ -1,7 +1,7 @@
 {
   "name": "agent-routekit",
   "version": "0.1.1",
-  "description": "Plan policy-bound routes and explain the decision without executing them.",
+  "description": "Choose a model or agent route by quality, risk, capability, and cost before execution.",
   "author": {
     "name": "Orbral",
     "url": "https://github.com/SpannDaMan"
@@ -9,27 +9,26 @@
   "homepage": "https://github.com/SpannDaMan/agent-routekit",
   "repository": "https://github.com/SpannDaMan/agent-routekit",
   "license": "MIT",
-  "keywords": ["agents", "codex", "model-routing", "orchestration", "receipts"],
+  "keywords": ["model-routing", "model-selection", "agent-orchestration", "cost-control", "quality-gates", "independent-review", "routing-policy", "codex"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Agent RouteKit",
+    "displayName": "Local Model Route Planner",
     "shortDescription": "Plan the route, not the run.",
-    "longDescription": "Evaluate declared planning policies and produce a transparent Policy-Bound Route Receipt with candidates, exclusions, assumptions, alternatives, and the no-execution boundary. No providers are called and no runtime is dispatched.",
+    "longDescription": "Use this before execution when you have a local route registry and need the lowest-cost eligible model or agent plan. Local Model Route Planner checks quality, risk, capability, cost, and review requirements, explains rejected options, and requires an independent verifier for high-risk work. Do not use it to call a provider or claim a route ran; it produces planning evidence only.",
     "developerName": "Orbral",
     "category": "Developer Tools",
-    "capabilities": ["Local", "Planning policy evaluation", "Decision receipts", "Outcome reconciliation", "No credentials"],
+    "capabilities": ["Plan from a local model and agent registry", "Choose the lowest-cost eligible route", "Explain rejected options", "Require independent high-risk review", "Never call a provider"],
     "websiteURL": "https://github.com/SpannDaMan/agent-routekit",
     "privacyPolicyURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Recommend a planning route.",
-      "Compare these candidate routes.",
-      "Produce a policy-bound decision receipt."
+      "Here is my task and route registry. Choose the lowest-cost eligible model, explain rejected options, and do not run anything.",
+      "Plan an executor and independent reviewer for this high-risk task, then show why each route was selected.",
+      "Check whether my routing policy leaves any important task without a safe eligible route."
     ],
     "brandColor": "#0183E0",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png",
-    "logoDark": "./assets/logo-dark.png",
-    "screenshots": ["./assets/screenshot1.png"]
+    "logoDark": "./assets/logo-dark.png"
   }
 }

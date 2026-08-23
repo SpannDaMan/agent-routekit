@@ -1,6 +1,6 @@
 # OpenAI/Codex Plugin Submission Packet
 
-Agent RouteKit is prepared as a skills-only plugin. It has no MCP server, UI, product-managed credentials, network access, telemetry, or hosted data storage.
+Local Model Route Planner is prepared as a skills-only plugin. It has no MCP server, UI, product-managed credentials, network access, telemetry, or hosted data storage.
 
 ## Local package
 

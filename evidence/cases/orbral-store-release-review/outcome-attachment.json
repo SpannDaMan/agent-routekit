@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "d58684e29e8d881e",
+  "evidence_source": "evidence/cases/orbral-store-release-review/independent-evidence.json",
+  "observed_route_id": "terra-high-review",
+  "metrics": [
+    {
+      "name": "planned_execution_route_observed",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "direction": "higher_is_better"
+    },
+    {
+      "name": "independent_verifier_executed",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "direction": "higher_is_better"
+    },
+    {
+      "name": "evidence_hold_preserved",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "direction": "higher_is_better"
+    }
+  ],
+  "limitations": [
+    "The metrics are binary procedural observations, not cost, quality, demand, ranking, or provider-acceptance measurements.",
+    "The first verifier attempt failed closed because its own runtime receipt was absent; the second attempt used that new receipt evidence.",
+    "The verifier's raw provider route label premium_super was mapped to the planned registry label nemotron-independent-review through provider_id nemotron_3_super.",
+    "No causal claim is made that Local Model Route Planner improved the downstream review result."
+  ],
+  "routekit_non_collection_statement": "RouteKit did not collect or execute this outcome."
+}

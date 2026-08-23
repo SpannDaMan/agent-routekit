@@ -1,10 +1,11 @@
-# Agent RouteKit Brand Authority
+# Local Model Route Planner Brand Authority
 
 Status: publication-hardened local candidate. Public publication is not yet performed.
 
 ## Identity lock
 
-- Product name: Agent RouteKit
+- Public display name: Local Model Route Planner
+- Stable package, plugin, repository slug, and compatibility identifier: `agent-routekit`
 - Repository: `SpannDaMan/agent-routekit`
 - Publisher and maintainer: SpannDaMan
 - Product category: Codex-first developer tool
@@ -13,7 +14,7 @@ Status: publication-hardened local candidate. Public publication is not yet perf
 
 ## Brand thesis
 
-Agent RouteKit makes agent and model routing inspectable. It chooses the least-cost route that still clears the declared quality, complexity, risk, capability, and independence requirements, then leaves a receipt that explains the decision.
+Local Model Route Planner makes agent and model routing inspectable. It chooses the least-cost route that still clears the declared quality, complexity, risk, capability, and independence requirements, then leaves a receipt that explains the decision.
 
 The product should feel like a precise piece of routing infrastructure: compact, legible, trustworthy, and easy to inspect. It should not look like a generic AI assistant, a crypto token, or a sprawling enterprise platform.
 

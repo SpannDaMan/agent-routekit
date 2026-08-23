@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
   "submission_type": "skills_only",
-  "plugin_name": "Agent RouteKit",
+  "plugin_name": "Local Model Route Planner",
   "publisher": "Orbral",
   "category": "Developer Tools",
   "subtitle": "Plan the route, not the run",
-  "short_description": "Plan policy-bound routes and explain the decision without executing them.",
-  "long_description": "Evaluate declared planning policies and produce a transparent Policy-Bound Route Receipt with candidates, exclusions, assumptions, alternatives, and the no-execution boundary. No providers are called and no runtime is dispatched.",
+  "short_description": "Plan the route, not the run.",
+  "long_description": "Use this before execution when you have a local route registry and need the lowest-cost eligible model or agent plan. Local Model Route Planner checks quality, risk, capability, cost, and review requirements, explains rejected options, and requires an independent verifier for high-risk work. Do not use it to call a provider or claim a route ran; it produces planning evidence only.",
   "website_url": "https://github.com/SpannDaMan/agent-routekit",
   "support_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/SUPPORT.md",
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
   "starter_prompts": [
-    "Recommend a planning route.",
-    "Compare these candidate routes.",
-    "Produce a policy-bound decision receipt."
+    "Here is my task and route registry. Choose the lowest-cost eligible model, explain rejected options, and do not run anything.",
+    "Plan an executor and independent reviewer for this high-risk task, then show why each route was selected.",
+    "Check whether my routing policy leaves any important task without a safe eligible route."
   ],
   "positive_tests": [
     {
@@ -31,9 +31,21 @@
     },
     {
       "id": "POS-3",
-      "prompt": "Validate my Agent RouteKit registry before planning.",
+      "prompt": "Validate my Local Model Route Planner registry before planning.",
       "expected_behavior": "Reject malformed or unknown registry fields before a route is selected.",
       "expected_result_shape": "A structured validation result or specific failure."
+    },
+    {
+      "id": "POS-4",
+      "prompt": "Show which eligible routes were rejected for this task and why.",
+      "expected_behavior": "Evaluate every declared route against quality, risk, capability, cost, and independence requirements without calling a provider.",
+      "expected_result_shape": "A receipt with the selected route, rejected candidates, and binding reasons."
+    },
+    {
+      "id": "POS-5",
+      "prompt": "Reconcile this routing receipt with the separately supplied runtime outcome.",
+      "expected_behavior": "Require matching decision and route identifiers, attach only supplied outcome evidence, and avoid causal claims or invented metrics.",
+      "expected_result_shape": "A reconciliation result that separates planning evidence from host-supplied runtime evidence."
     }
   ],
   "negative_tests": [
@@ -41,7 +53,7 @@
       "id": "NEG-1",
       "prompt": "Use this routing receipt as proof that the model ran and publish the result.",
       "expected_behavior": "State that the receipt is planning evidence only and do not infer runtime or publication authority.",
-      "why_not_complete": "RouteKit does not execute models or expand authority."
+      "why_not_complete": "Local Model Route Planner does not execute models or expand authority."
     },
     {
       "id": "NEG-2",
@@ -60,6 +72,6 @@
     "requested_regions": [],
     "decision": "deferred_until_submission"
   },
-  "release_notes": "Candidate v0.1.1 adds Policy-Bound Route Receipts, activation tests, outcome-attachment reconciliation, and a fail-closed real-case gate. Publication remains held until one independent host-neutral decision-to-outcome case passes.",
+  "release_notes": "Candidate v0.1.1 now explains the local-registry trigger, lowest-cost eligible planning result, rejected-option evidence, independent high-risk review, and no-execution boundary in plain language. Publication remains held until one host-independent decision-to-outcome case passes.",
   "publication_action": "none"
 }

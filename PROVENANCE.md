@@ -1,6 +1,6 @@
 # Provenance
 
-Agent RouteKit 0.1.0 is a clean-room implementation of a generic public product contract: choose the lowest-cost eligible route under declared quality and risk constraints, then emit a reviewable receipt.
+Local Model Route Planner is a clean-room implementation of a generic public product contract: choose the lowest-cost eligible route under declared quality and risk constraints, then emit a reviewable receipt.
 
 The candidate was authored from scratch for this standalone directory. No external repository source code, private source code, private prompts, route registries, client material, internal paths, credentials, or prior Git history was copied into it.
 

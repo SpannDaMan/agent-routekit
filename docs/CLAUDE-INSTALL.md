@@ -1,6 +1,6 @@
 # Install In Claude Code
 
-Agent RouteKit ships as a skills-only Claude Code plugin. It does not install an MCP server, request credentials, or make network calls.
+Local Model Route Planner ships as a skills-only Claude Code plugin. It does not install an MCP server, request credentials, or make network calls.
 
 After the repository is public:
 

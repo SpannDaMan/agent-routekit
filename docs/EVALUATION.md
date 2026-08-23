@@ -1,6 +1,6 @@
 # Evaluation Guide
 
-Agent RouteKit's release validation is not a substitute for behavioral evaluation.
+Local Model Route Planner's release validation is not a substitute for behavioral evaluation.
 
 The public candidate makes no provider-performance, pricing, availability, or runtime-execution claim. Its local evaluation tests the deterministic routing contract: routine least-cost selection, high-risk independent-review selection, and fail-closed behavior when a requirement cannot be met.
 

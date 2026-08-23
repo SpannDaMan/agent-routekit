@@ -1,6 +1,6 @@
 # Terms
 
-Agent RouteKit is open-source software licensed under the [MIT License](LICENSE).
+Local Model Route Planner is open-source software licensed under the [MIT License](LICENSE).
 
 ## No hosted service
 

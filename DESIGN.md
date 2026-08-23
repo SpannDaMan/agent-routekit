@@ -1,6 +1,6 @@
-# Agent RouteKit Design Authority
+# Local Model Route Planner Design Authority
 
-This file is the implementation authority for the Agent RouteKit plugin identity and public repository surfaces. Brand meaning and rights constraints live in [BRAND.md](BRAND.md).
+This file is the implementation authority for the Local Model Route Planner display identity and public repository surfaces. Brand meaning and rights constraints live in [BRAND.md](BRAND.md).
 
 ## Core visual idea
 
@@ -30,7 +30,7 @@ The mark represents three candidate routes entering a gate, one route clearing t
 
 - Repository and docs: system sans or Inter when available.
 - Code and receipt examples: a platform monospace stack.
-- Product name styling: “Agent RouteKit”; do not collapse it to “AgentRouteKit” in prose.
+- Product name styling: “Local Model Route Planner.” Keep `agent-routekit` only for stable machine identifiers and legacy asset custody.
 - The icon contains no generated text.
 
 ## Plugin-page assets

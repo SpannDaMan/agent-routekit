@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/outcome.schema.json",
-  "title": "Agent RouteKit Independent Outcome Attachment",
+  "title": "Local Model Route Planner Independent Outcome Attachment",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema_version", "decision_id", "evidence_source", "observed_route_id", "metrics", "limitations", "routekit_non_collection_statement"],

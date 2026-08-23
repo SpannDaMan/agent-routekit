@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "artifact": "Local Model Route Planner Outcome Reconciliation Receipt",
+  "tool": {
+    "name": "agent-routekit",
+    "version": "0.1.1"
+  },
+  "decision_id": "d58684e29e8d881e",
+  "reconciliation_id": "c7e1978f19e467da",
+  "selected_route_id": "terra-high-review",
+  "planning_receipt_sha256": "292debccf2b0ca04dae687b668738945c472acf586388d34deb53a22bcb3ad25",
+  "outcome_attachment_sha256": "dc0a8559bfc978f62a33f9ed8d0049c098d7b61d493b09142f3dc7bfb894d2b6",
+  "evidence_source": "evidence/cases/orbral-store-release-review/independent-evidence.json",
+  "metric_deltas": [
+    {
+      "name": "evidence_hold_preserved",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "delta": 1,
+      "direction": "higher_is_better",
+      "interpretation": "not_interpreted"
+    },
+    {
+      "name": "independent_verifier_executed",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "delta": 1,
+      "direction": "higher_is_better",
+      "interpretation": "not_interpreted"
+    },
+    {
+      "name": "planned_execution_route_observed",
+      "unit": "boolean_int",
+      "baseline": 0,
+      "observed": 1,
+      "delta": 1,
+      "direction": "higher_is_better",
+      "interpretation": "not_interpreted"
+    }
+  ],
+  "limitations": [
+    "The metrics are binary procedural observations, not cost, quality, demand, ranking, or provider-acceptance measurements.",
+    "The first verifier attempt failed closed because its own runtime receipt was absent; the second attempt used that new receipt evidence.",
+    "The verifier's raw provider route label premium_super was mapped to the planned registry label nemotron-independent-review through provider_id nemotron_3_super.",
+    "No causal claim is made that Local Model Route Planner improved the downstream review result."
+  ],
+  "status": "reconciled_without_causal_interpretation",
+  "claim_boundary": "Binds a planning receipt to independently supplied observations only; RouteKit did not execute or collect the outcome and does not claim causation, runtime quality, or live cost accuracy."
+}

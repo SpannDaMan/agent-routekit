@@ -427,7 +427,7 @@ def plan_route(registry: Any, task: Any) -> dict[str, Any]:
             "Selected route availability at execution time.",
             "Independent runtime outcome and observed cost or quality metrics.",
         ],
-        "no_execution_boundary": "Agent RouteKit planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome.",
+        "no_execution_boundary": "Local Model Route Planner planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome.",
     }
 
 
@@ -575,7 +575,7 @@ def reconcile_outcome(planning_receipt: Any, outcome_attachment: Any) -> dict[st
     outcome_fingerprint = _fingerprint(clean_outcome)
     return {
         "schema_version": "1.0",
-        "artifact": "Agent RouteKit Outcome Reconciliation Receipt",
+        "artifact": "Local Model Route Planner Outcome Reconciliation Receipt",
         "tool": {"name": "agent-routekit", "version": VERSION},
         "decision_id": decision_id,
         "reconciliation_id": _fingerprint(

@@ -1,6 +1,6 @@
 # Privacy
 
-Agent RouteKit is a local, skills-only plugin and standard-library command-line tool.
+Local Model Route Planner is a local, skills-only plugin and standard-library command-line tool.
 
 ## Data handling
 
@@ -13,7 +13,7 @@ RouteKit receipts include a task ID and a SHA-256 fingerprint of normalized task
 
 ## Host products
 
-When Agent RouteKit is installed through Codex, Claude Code, GitHub, or another host, that host's privacy terms and telemetry settings still apply to the host product. Agent RouteKit does not control or expand them.
+When Local Model Route Planner is installed through Codex, Claude Code, GitHub, or another host, that host's privacy terms and telemetry settings still apply to the host product. Local Model Route Planner does not control or expand them.
 
 ## Contact
 

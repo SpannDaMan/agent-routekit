@@ -1,7 +1,7 @@
 {
   "status": "pass",
-  "candidate": "agent-routekit 0.1.0",
-  "product_revision_sha256": "28fafa148f353e5f2ca5263790561d768d38278c9e8d8079c6081c5a758ac912",
+  "candidate": "agent-routekit 0.1.1",
+  "product_revision_sha256": "fff029407121da67761b0327bf07985ce33ad5e84675d7b5817e90409f5d2f1b",
   "root": ".",
   "checks": {
     "required_files": "pass",
@@ -13,6 +13,8 @@
     "evidence_bindings": "pass",
     "sample_receipt": "pass",
     "one_command_demo": "pass",
+    "activation_golden": "pass",
+    "publication_outcome_gate": "pass",
     "png_assets": "pass"
   },
   "asset_sha256": {

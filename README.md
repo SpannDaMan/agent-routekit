@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="plugins/agent-routekit/assets/logo-dark.png" width="180" alt="Agent RouteKit logo">
+  <img src="plugins/agent-routekit/assets/logo-dark.png" width="180" alt="Local Model Route Planner logo">
 </p>
 
-# Agent RouteKit
+# Local Model Route Planner
 
 Plan the route, not the run.
 
-Agent RouteKit is for Codex users and maintainers who want to inspect routing policy before any model runs. It chooses the least expensive eligible lane, shows exactly why that lane won, and emits a **Policy-Bound Route Receipt** with assumptions, unresolved evidence, alternatives, and an explicit no-execution boundary.
+Use Local Model Route Planner before execution when you have a local route registry and need the lowest-cost eligible model or agent plan. It checks quality, risk, capability, cost, and review requirements, explains why other options lost, and requires an independent verifier for high-risk work. It never calls a provider or proves that the selected route ran; it produces planning evidence only.
 
 It is a Codex-first, provider-neutral planning and verification tool. It does **not** invoke models, modify Codex, host a gateway, or claim that a selected route actually ran. You declare task complexity, risk, minimum quality, and required capabilities; RouteKit selects an eligible execution route, requires an independent verifier when risk demands one, and emits a deterministic receipt.
 
 > **Release state:** local publication hardening is complete when its targeted evidence passes. The product is not yet published; clean standalone history and the root-owned frozen-candidate gate remain required before release.
 
-![Agent RouteKit routing receipt](plugins/agent-routekit/assets/screenshot1.png)
+![Local Model Route Planner routing receipt](plugins/agent-routekit/assets/screenshot1.png)
 
 ## Try it locally
 
@@ -85,7 +85,7 @@ The install is standard-library-only. It adds the `agent-routekit` console comma
 
 ## What it does not do
 
-Agent RouteKit plans and records a routing decision. It does not call a model provider, change Codex settings, prove which model ran, or grant an agent new authority. The host orchestration layer remains responsible for execution and separate runtime evidence.
+Local Model Route Planner plans and records a routing decision. It does not call a model provider, change Codex settings, prove which model ran, or grant an agent new authority. The host orchestration layer remains responsible for execution and separate runtime evidence.
 
 ## Where it fits
 
@@ -93,7 +93,7 @@ These categories can be combined; this is a boundary map, not a superiority rank
 
 | Category | Typical job | Runtime model calls | RouteKit relationship |
 |---|---|---:|---|
-| Agent RouteKit | Produce a deterministic pre-execution route and optional independent-verifier plan | No | Emits a receipt for a host to inspect or consume. |
+| Local Model Route Planner | Produce a deterministic pre-execution route and optional independent-verifier plan | No | Emits a receipt for a host to inspect or consume. |
 | Runtime gateway | Proxy or dispatch provider requests while an application runs | Usually | May execute a RouteKit plan, but owns availability, credentials, retries, and runtime proof. |
 | Learned router | Predict a route from training data, benchmarks, or online signals | Varies | Can be represented as a registry lane only if the host can enforce and verify it. |
 | Orchestration plugin | Coordinate agents, tasks, tools, and execution state | Usually | May call RouteKit before execution; RouteKit does not replace orchestration. |

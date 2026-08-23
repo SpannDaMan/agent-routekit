@@ -1,6 +1,6 @@
 # Security Policy
 
-Agent RouteKit is a local planner. It requires no credentials, network access, hosted service, or model-provider connection.
+Local Model Route Planner is a local planner. It requires no credentials, network access, hosted service, or model-provider connection.
 
 ## Supported versions
 

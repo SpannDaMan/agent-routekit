@@ -39,5 +39,5 @@
   "limitations": ["This receipt records a planning decision; it does not prove runtime model selection.", "Model and effort values are registry labels whose availability must be verified by the host."],
   "assumptions": ["Registry labels and policy inputs are caller-supplied declarations.", "Cost rank is ordinal policy data, not a live provider price."],
   "unresolved_evidence": ["Selected route availability at execution time.", "Independent runtime outcome and observed cost or quality metrics."],
-  "no_execution_boundary": "Agent RouteKit planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."
+  "no_execution_boundary": "Local Model Route Planner planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."
 }

@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agent-routekit"
 version = "0.1.1"
-description = "Plan policy-bound agent routes without executing them"
+description = "Choose a model or agent route by quality, risk, capability, and cost before execution"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [{name = "Orbral"}]
-keywords = ["agents", "codex", "model-routing", "orchestration", "receipts"]
+keywords = ["model-routing", "model-selection", "agent-orchestration", "cost-control", "quality-gates", "independent-review", "routing-policy", "codex"]
 dependencies = []
 
 [project.urls]

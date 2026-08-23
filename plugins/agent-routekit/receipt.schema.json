@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/SpannDaMan/agent-routekit/blob/main/plugins/agent-routekit/receipt.schema.json",
-  "title": "Agent RouteKit Routing Receipt",
+  "title": "Local Model Route Planner Routing Receipt",
   "$defs": {
     "publicRoute": {
       "type": "object",
@@ -112,7 +112,7 @@
     "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
     "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
     "unresolved_evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-    "no_execution_boundary": {"const": "Agent RouteKit planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."}
+    "no_execution_boundary": {"const": "Local Model Route Planner planned this decision locally and did not call a provider, execute a model, dispatch a runtime, or collect an outcome."}
   },
   "additionalProperties": false
 }

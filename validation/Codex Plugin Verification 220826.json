@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "candidate": "agent-routekit 0.1.1",
-  "product_revision_sha256": "786954d9407fbcf34534653167356958411351b61bd3dc9ef80ea82b9061120e",
+  "product_revision_sha256": "fff029407121da67761b0327bf07985ce33ad5e84675d7b5817e90409f5d2f1b",
   "status": "pass",
   "exit_code": 0,
   "validated_plugin_path": "plugins/agent-routekit",
@@ -13,8 +13,8 @@
   "tool": {
     "name": "Codex plugin-creator validate_plugin.py",
     "identity": "sha256",
-    "sha256": "7a75b3339396402ad9a40ddc1e037e01c54e71a53a3bfb22a01b1ca235c50206",
-    "bytes": 22172
+    "sha256": "4e84c911479e4d158d723ed8ccc881d3499e580fbf5650e60d379a1a25ac3186",
+    "bytes": 21809
   },
   "output": "Plugin validation passed: .\\plugins\\agent-routekit",
   "publication_action": "none"

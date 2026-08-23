@@ -4,7 +4,7 @@ The pilot begins on the date `v0.1.0` is publicly released. No pilot has started
 
 ## Purpose
 
-Test whether Agent RouteKit creates retained developer value and whether SpannDaMan can maintain it without creating an open-ended support burden.
+Test whether Local Model Route Planner creates retained developer value and whether SpannDaMan can maintain it without creating an open-ended support burden.
 
 ## Maintainer commitment
 

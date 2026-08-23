@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "candidate": "agent-routekit 0.1.1",
-  "product_revision_sha256": "786954d9407fbcf34534653167356958411351b61bd3dc9ef80ea82b9061120e",
+  "product_revision_sha256": "fff029407121da67761b0327bf07985ce33ad5e84675d7b5817e90409f5d2f1b",
   "status": "pass",
   "source_classification": "deterministic_transparent_derivative",
   "opaque_parent_sha256": "01684a291239db37aaa354697cf61e445be4c0635b4831de3fc54c6113772e21",
