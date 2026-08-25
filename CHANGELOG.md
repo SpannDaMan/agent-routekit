@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.4 — OpenAI no-mention prompt compliance
+
+- Removed the leading plugin `@mention` from both store prompts because OpenAI requires mention-free starter text.
+- Preserved the approved support-build and billing-migration routing wording and order.
+- Kept the locked full-bleed Silver Satin marketplace identity unchanged.
+
 ## 0.1.3 — OpenAI starter-prompt limit compliance
 
 - Tightened both approved multi-step routing examples to 128 characters or fewer for OpenAI's store limit.

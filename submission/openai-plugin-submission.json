@@ -12,8 +12,8 @@
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
   "starter_prompts": [
-    "@Local Model Route Planner Research, plan, and build a support dashboard. Route each phase to a model and name its verifier.",
-    "@Local Model Route Planner Plan a billing migration. Assign each step and reviewer, explain the fit, and flag unsafe routes."
+    "Research, plan, and build a support dashboard. Route each phase to a model and name its verifier.",
+    "Plan a billing migration. Assign each step and reviewer, explain the fit, and flag unsafe routes."
   ],
   "positive_tests": [
     {
@@ -71,6 +71,6 @@
     "requested_regions": [],
     "decision": "deferred_until_submission"
   },
-  "release_notes": "Version 0.1.3 adds operator-approved multi-step build and migration routing examples plus the locked full-bleed Silver Satin logo family while preserving local-registry planning, lowest-cost eligibility, independent high-risk review, rejected-option evidence, and the no-execution boundary.",
+  "release_notes": "Version 0.1.4 adds operator-approved multi-step build and migration routing examples plus the locked full-bleed Silver Satin logo family while preserving local-registry planning, lowest-cost eligibility, independent high-risk review, rejected-option evidence, and the no-execution boundary.",
   "publication_action": "none"
 }
