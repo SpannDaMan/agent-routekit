@@ -54,7 +54,7 @@ def main() -> int:
     )
     receipt = {
         "schema_version": "1.0",
-        "candidate": "agent-routekit 0.1.1",
+        "candidate": "agent-routekit 0.1.2",
         "product_revision_sha256": validator.product_revision_sha256(),
         "status": status,
         "source_classification": "deterministic_transparent_derivative",
