@@ -4,9 +4,18 @@
   "cases": [
     {
       "id": "orbral-store-release-review-20260823",
-      "planning_receipt": {"path": "evidence/cases/orbral-store-release-review/planning-receipt.json", "sha256": "ef3115ab5a3dfc78c8687c57d62bc9bef952206b002fb4ef20e2edc5d655e67f"},
-      "outcome_attachment": {"path": "evidence/cases/orbral-store-release-review/outcome-attachment.json", "sha256": "9a5290f190036cbbd8c89b853d8dd712eddf32e57094faff23c630b199b4f31c"},
-      "reconciliation_receipt": {"path": "evidence/cases/orbral-store-release-review/reconciliation-receipt.json", "sha256": "08a8075685ce8f18be1084ab51f93b853ebc1be4abc34c2b750fcf79b01c40dd"},
+      "planning_receipt": {
+        "path": "evidence/cases/orbral-store-release-review/planning-receipt.json",
+        "sha256": "ef3115ab5a3dfc78c8687c57d62bc9bef952206b002fb4ef20e2edc5d655e67f"
+      },
+      "outcome_attachment": {
+        "path": "evidence/cases/orbral-store-release-review/outcome-attachment.json",
+        "sha256": "9a5290f190036cbbd8c89b853d8dd712eddf32e57094faff23c630b199b4f31c"
+      },
+      "reconciliation_receipt": {
+        "path": "evidence/cases/orbral-store-release-review/reconciliation-receipt.json",
+        "sha256": "327acef2bbc9853455e2f30efa14c0d18791ee936da318630d2214cc32f6af68"
+      },
       "host_independent": true,
       "evidence_source": "evidence/cases/orbral-store-release-review/independent-evidence.json"
     }

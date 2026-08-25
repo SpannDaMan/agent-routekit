@@ -400,7 +400,7 @@ def validate_metadata() -> list[str]:
 
     expected_manifest = {
         "name": "agent-routekit",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "license": "MIT",
         "homepage": "https://github.com/SpannDaMan/agent-routekit",
         "repository": "https://github.com/SpannDaMan/agent-routekit",
@@ -759,7 +759,7 @@ def run_validation() -> dict[str, Any]:
 
     return {
         "status": "pass" if not errors else "fail",
-        "candidate": "agent-routekit 0.1.2",
+        "candidate": "agent-routekit 0.1.3",
         "product_revision_sha256": product_revision_sha256(),
         "root": ".",
         "checks": {name: "pass" if not group else "fail" for name, group in check_errors.items()},
