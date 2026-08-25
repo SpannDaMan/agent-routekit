@@ -9,7 +9,7 @@
       "name": "local-model-route-planner",
       "source": "./plugins/agent-routekit",
       "description": "Use before execution with a local route registry; choose the lowest-cost eligible model or agent plan, explain rejected options, and never call a provider.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "category": "development",
       "keywords": ["model routing", "model selection", "agent orchestration", "cost control", "independent review"],
       "tags": ["development", "routing", "agents", "local"]

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-routekit"
-version = "0.1.3"
+version = "0.1.4"
 description = "Choose a model or agent route by quality, risk, capability, and cost before execution"
 readme = "README.md"
 requires-python = ">=3.10"

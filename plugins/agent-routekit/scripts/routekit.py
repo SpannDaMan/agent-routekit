@@ -14,7 +14,7 @@ from typing import Any
 
 RECEIPT_VERSION = "1.0"
 REGISTRY_VERSION = "1.0"
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 OUTCOME_BOUNDARY_STATEMENT = "RouteKit did not collect or execute this outcome."
 
 QUALITY_LEVELS = {"routine": 1, "standard": 2, "high": 3, "critical": 4}

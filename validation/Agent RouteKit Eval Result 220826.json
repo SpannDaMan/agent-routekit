@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "candidate": "agent-routekit 0.1.3",
+  "candidate": "agent-routekit 0.1.4",
   "suite_id": "agent-routekit-public-candidate-v0.1.0",
   "status": "pass",
   "case_count": 3,
@@ -22,5 +22,5 @@
     }
   ],
   "publication_action": "none",
-  "product_revision_sha256": "b4441216b69de7cda3eeb9c068ddb3a64a4069b733c64b2214e141869863e0ca"
+  "product_revision_sha256": "73735ca0a464c1bda610a89243d84b23d23b05c359a08e094d68cbd41c55ecec"
 }
