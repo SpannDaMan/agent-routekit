@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.3 — OpenAI starter-prompt limit compliance
+
+- Tightened both approved multi-step routing examples to 128 characters or fewer for OpenAI's store limit.
+- Preserved the build routing, migration routing, named-verifier, fit-explanation, and unsafe-route flows.
+- Kept the locked full-bleed Silver Satin marketplace identity unchanged.
+
 ## 0.1.2 — multi-step build examples and Silver Satin identity
 
 - Added the operator-approved customer-support build and production-migration routing examples.

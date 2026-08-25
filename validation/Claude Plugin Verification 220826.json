@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "candidate": "agent-routekit 0.1.2",
-  "product_revision_sha256": "1f8ccb55ab7965e9e8283331642ec7db5ede2d70c36bce0f6d2e8e6da234367c",
+  "candidate": "agent-routekit 0.1.3",
+  "product_revision_sha256": "0de722dc96823703827888dead08ec1ecd7a51a95cfd0e10387f10e72ab5620c",
   "status": "pass",
   "checks": [
     {

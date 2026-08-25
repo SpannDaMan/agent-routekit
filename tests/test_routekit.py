@@ -223,7 +223,7 @@ class RouteKitTests(unittest.TestCase):
 
     def test_policy_bound_receipt_exposes_no_execution_boundary(self) -> None:
         receipt = routekit.plan_route(load_registry(), task())
-        self.assertEqual(receipt["tool"], {"name": "agent-routekit", "version": "0.1.2"})
+        self.assertEqual(receipt["tool"], {"name": "agent-routekit", "version": "0.1.3"})
         self.assertIn("did not call a provider", receipt["no_execution_boundary"])
         self.assertTrue(receipt["assumptions"])
         self.assertTrue(receipt["unresolved_evidence"])
@@ -290,7 +290,7 @@ class RouteKitTests(unittest.TestCase):
             text=True,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(result.stdout.strip(), "routekit 0.1.2")
+        self.assertEqual(result.stdout.strip(), "routekit 0.1.3")
 
     def test_one_command_demo_matches_canonical_cli(self) -> None:
         demo = subprocess.run(

@@ -51,7 +51,7 @@
   ],
   "properties": {
     "receipt_version": {"const": "1.0"},
-    "tool": {"const": {"name": "agent-routekit", "version": "0.1.2"}},
+    "tool": {"const": {"name": "agent-routekit", "version": "0.1.3"}},
     "decision_id": {"type": "string", "pattern": "^[a-f0-9]{16}$"},
     "task": {
       "type": "object",

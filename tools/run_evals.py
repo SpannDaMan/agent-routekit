@@ -65,7 +65,7 @@ def run_suite() -> dict[str, Any]:
         results.append(result)
     return {
         "schema_version": "1.0",
-        "candidate": "agent-routekit 0.1.2",
+        "candidate": "agent-routekit 0.1.3",
         "suite_id": suite["suite_id"],
         "status": "pass" if all(item["status"] == "pass" for item in results) else "fail",
         "case_count": len(results),

@@ -3,7 +3,7 @@
   "artifact": "Local Model Route Planner Outcome Reconciliation Receipt",
   "tool": {
     "name": "agent-routekit",
-    "version": "0.1.2"
+    "version": "0.1.3"
   },
   "decision_id": "d58684e29e8d881e",
   "reconciliation_id": "c7e1978f19e467da",
