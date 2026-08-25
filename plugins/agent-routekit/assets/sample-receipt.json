@@ -1,6 +1,6 @@
 {
   "receipt_version": "1.0",
-  "tool": {"name": "agent-routekit", "version": "0.1.1"},
+  "tool": {"name": "agent-routekit", "version": "0.1.2"},
   "decision_id": "20fcf65b051dd038",
   "task": {"id": "review-auth-migration", "fingerprint": "a55ff28aa678cc3c1689888e2ac13ee30b85181695d83879387638b480c46f69"},
   "policy": {

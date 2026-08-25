@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.2 — multi-step build examples and Silver Satin identity
+
+- Added the operator-approved customer-support build and production-migration routing examples.
+- Reduced the public starter set from three prompts to two stronger natural workflows.
+- Promoted the exact route mark over the locked full-bleed Silver Satin marketplace background while preserving the no-execution boundary.
+
 ## 0.1.1 — Policy-Bound Route Receipt
 
 - Added explicit assumptions, unresolved evidence, eligible alternatives, tool identity, and the no-execution boundary.

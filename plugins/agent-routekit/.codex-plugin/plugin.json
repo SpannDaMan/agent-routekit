@@ -1,6 +1,6 @@
 {
   "name": "agent-routekit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Choose a model or agent route by quality, risk, capability, and cost before execution.",
   "author": {
     "name": "Orbral",
@@ -22,9 +22,8 @@
     "privacyPolicyURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Here is my task and route registry. Choose the lowest-cost eligible model, explain rejected options, and do not run anything.",
-      "Plan an executor and independent reviewer for this high-risk task, then show why each route was selected.",
-      "Check whether my routing policy leaves any important task without a safe eligible route."
+      "I need you to research, plan, and build a customer-support dashboard with a frontend, API, database, tests, and launch checklist. Route each phase to the lowest-cost eligible model or agent, add an independent reviewer where risk requires it, and explain the routing plan before any work begins.",
+      "This migration touches production data, billing, and customer communications. Assign the right model or agent to each workstream, add an independent reviewer where needed, and explain why each choice fits that part of the job. Flag any phase that does not have a safe option."
     ],
     "brandColor": "#0183E0",
     "composerIcon": "./assets/icon.png",

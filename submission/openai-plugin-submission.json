@@ -12,9 +12,8 @@
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-routekit/blob/main/TERMS.md",
   "starter_prompts": [
-    "Here is my task and route registry. Choose the lowest-cost eligible model, explain rejected options, and do not run anything.",
-    "Plan an executor and independent reviewer for this high-risk task, then show why each route was selected.",
-    "Check whether my routing policy leaves any important task without a safe eligible route."
+    "I need you to research, plan, and build a customer-support dashboard with a frontend, API, database, tests, and launch checklist. Route each phase to the lowest-cost eligible model or agent, add an independent reviewer where risk requires it, and explain the routing plan before any work begins.",
+    "This migration touches production data, billing, and customer communications. Assign the right model or agent to each workstream, add an independent reviewer where needed, and explain why each choice fits that part of the job. Flag any phase that does not have a safe option."
   ],
   "positive_tests": [
     {
@@ -72,6 +71,6 @@
     "requested_regions": [],
     "decision": "deferred_until_submission"
   },
-  "release_notes": "Candidate v0.1.1 now explains the local-registry trigger, lowest-cost eligible planning result, rejected-option evidence, independent high-risk review, and no-execution boundary in plain language. Publication remains held until one host-independent decision-to-outcome case passes.",
+  "release_notes": "Version 0.1.2 adds operator-approved multi-step build and migration routing examples plus the locked full-bleed Silver Satin logo family while preserving local-registry planning, lowest-cost eligibility, independent high-risk review, rejected-option evidence, and the no-execution boundary.",
   "publication_action": "none"
 }

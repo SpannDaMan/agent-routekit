@@ -79,6 +79,8 @@ REQUIRED_FILES = (
     "evidence/outcome-case-manifest.json",
     "plugins/agent-routekit/assets/sample-receipt.json",
     "plugins/agent-routekit/assets/Agent RouteKit Transparent Master 220826.png",
+    "plugins/agent-routekit/assets/Local Model Route Planner Silver Satin Master 240826.png",
+    "plugins/agent-routekit/assets/Silver Satin Background Master 240826.png",
     "plugins/agent-routekit/assets/Logo Generation Manifest 220826.json",
     "plugins/agent-routekit/assets/icon.png",
     "plugins/agent-routekit/assets/logo.png",
@@ -97,7 +99,9 @@ REQUIRED_FILES = (
 
 EXPECTED_PNGS = {
     "plugins/agent-routekit/assets/Agent RouteKit Transparent Master 220826.png": (1254, 1254, True),
-    "plugins/agent-routekit/assets/icon.png": (512, 512, True),
+    "plugins/agent-routekit/assets/Local Model Route Planner Silver Satin Master 240826.png": (1254, 1254, False),
+    "plugins/agent-routekit/assets/Silver Satin Background Master 240826.png": (1254, 1254, False),
+    "plugins/agent-routekit/assets/icon.png": (512, 512, False),
     "plugins/agent-routekit/assets/logo.png": (1024, 1024, False),
     "plugins/agent-routekit/assets/logo-dark.png": (1024, 1024, False),
     "plugins/agent-routekit/assets/screenshot1.png": (1600, 900, False),
@@ -142,11 +146,21 @@ TEXT_SUFFIXES = {".md", ".json", ".py", ".toml", ".yml", ".yaml", ".ps1", ".svg"
 TEXT_REVISION_SUFFIXES = {".json", ".md", ".py", ".ps1", ".svg", ".toml", ".txt", ".yml", ".yaml"}
 TEXT_REVISION_NAMES = {".gitignore", "LICENSE"}
 MAX_FILE_BYTES = 1_000_000
+MAX_LOGO_PNG_BYTES = 2_000_000
+LARGE_LOGO_PNGS = {
+    Path("plugins/agent-routekit/assets/Local Model Route Planner Silver Satin Master 240826.png"),
+    Path("plugins/agent-routekit/assets/Silver Satin Background Master 240826.png"),
+    Path("plugins/agent-routekit/assets/logo.png"),
+    Path("plugins/agent-routekit/assets/logo-dark.png"),
+}
+
+
+def max_file_bytes_for(relative: Path) -> int:
+    return MAX_LOGO_PNG_BYTES if relative in LARGE_LOGO_PNGS else MAX_FILE_BYTES
 EXCLUDED_REVISION_PARTS = {"validation", ".git", "build", "dist", "__pycache__"}
 GENERATED_RESIDUE_PARTS = {"build", "dist", "__pycache__"}
 EXCLUDED_SCAN_PARTS = {".git"}
 REQUIRED_EVIDENCE = (
-    "validation/Transparent Asset Extraction Receipt 220826.json",
     "validation/Agent RouteKit Eval Result 220826.json",
     "validation/Codex Plugin Verification 220826.json",
     "validation/Claude Plugin Verification 220826.json",
@@ -332,8 +346,9 @@ def validate_file_shape() -> list[str]:
             continue
         if "__pycache__" in relative.parts or path.suffix == ".pyc":
             errors.append(f"generated Python cache is not allowed: {relative}")
-        if path.stat().st_size > MAX_FILE_BYTES:
-            errors.append(f"file exceeds {MAX_FILE_BYTES} bytes: {relative}")
+        max_bytes = max_file_bytes_for(relative)
+        if path.stat().st_size > max_bytes:
+            errors.append(f"file exceeds {max_bytes} bytes: {relative}")
     return errors
 
 
@@ -385,7 +400,7 @@ def validate_metadata() -> list[str]:
 
     expected_manifest = {
         "name": "agent-routekit",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "license": "MIT",
         "homepage": "https://github.com/SpannDaMan/agent-routekit",
         "repository": "https://github.com/SpannDaMan/agent-routekit",
@@ -469,8 +484,8 @@ def validate_metadata() -> list[str]:
             errors.append("OpenAI submission plugin_name must be Local Model Route Planner")
         if submission.get("short_description") != "Plan the route, not the run.":
             errors.append("OpenAI submission short_description must match the public subtitle")
-        if len(submission.get("starter_prompts", [])) != 3:
-            errors.append("OpenAI submission must contain three starter prompts")
+        if len(submission.get("starter_prompts", [])) != 2:
+            errors.append("OpenAI submission must contain the two operator-approved starter prompts")
         if len(submission.get("positive_tests", [])) != 5 or len(submission.get("negative_tests", [])) != 3:
             errors.append("OpenAI submission must contain five positive and three negative cases")
         if any("mcp" in str(key).lower() for key in submission):
@@ -526,22 +541,20 @@ def validate_logo_provenance() -> list[str]:
         manifest = load_json(manifest_path)
     except (OSError, json.JSONDecodeError) as exc:
         return [f"logo generation manifest failed: {exc}"]
-    expected_relative = "plugins/agent-routekit/assets/Agent RouteKit Transparent Master 220826.png"
+    expected_relative = "plugins/agent-routekit/assets/Local Model Route Planner Silver Satin Master 240826.png"
     master_path = ROOT / expected_relative
     if manifest.get("canonical_master") != expected_relative:
         errors.append("logo manifest canonical_master mismatch")
-    if manifest.get("source_type") != "deterministic_transparent_derivative":
-        errors.append("logo manifest source_type must be deterministic_transparent_derivative")
-    if "GPT Image 2" not in str(manifest.get("generation_mode", "")):
-        errors.append("logo manifest must record GPT Image 2 generation")
-    if manifest.get("source_background_policy") != "transparent_source":
-        errors.append("logo manifest source_background_policy must be transparent_source")
-    if manifest.get("local_edit_status") != "background_extraction_and_safe_fill_only":
-        errors.append("logo manifest must record background_extraction_and_safe_fill_only")
-    if manifest.get("opaque_parent_sha256") != "01684a291239db37aaa354697cf61e445be4c0635b4831de3fc54c6113772e21":
-        errors.append("logo manifest opaque_parent_sha256 mismatch")
-    if manifest.get("extraction_receipt") != "validation/Transparent Asset Extraction Receipt 220826.json":
-        errors.append("logo manifest extraction receipt mismatch")
+    if manifest.get("source_type") != "deterministic_exact_mark_composite":
+        errors.append("logo manifest source_type must be deterministic_exact_mark_composite")
+    if manifest.get("source_background_policy") != "opaque full-bleed silver satin":
+        errors.append("logo manifest source_background_policy must be opaque full-bleed silver satin")
+    if manifest.get("local_edit_status") != "background-only deterministic composition":
+        errors.append("logo manifest must record background-only deterministic composition")
+    if manifest.get("mark_source_sha256") != "d6fb622e290e040c1853917c2b36436751af97843ceca3e3afbde420a7cb5cc4":
+        errors.append("logo manifest mark source hash mismatch")
+    if manifest.get("shared_background_sha256") != "5ef688ba56bd8e8b185903df3a73262400859f0bb0791009b437f5d13ff8a579":
+        errors.append("logo manifest shared background hash mismatch")
     if master_path.is_file():
         actual = hashlib.sha256(master_path.read_bytes()).hexdigest()
         if actual != str(manifest.get("master_sha256", "")).casefold():
@@ -559,7 +572,7 @@ def validate_logo_provenance() -> list[str]:
     except (OSError, UnicodeDecodeError) as exc:
         errors.append(f"brand renderer read failed: {exc}")
     else:
-        for required in ("Place-Master", "DrawImage", "master_sha256", "transparent_source"):
+        for required in ("deterministic_exact_mark_composite", "opaque full-bleed silver satin", "mark_source_sha256", "shared_background_sha256", "none_verify_only"):
             if required not in script:
                 errors.append(f"brand renderer is missing source-only control: {required}")
         for forbidden in ("Draw-RouteKitMark", "Draw-OptimizerMark", "function Draw-Mark", "function Mark(", "FillEllipse", "FillPolygon", "DrawLines", "DrawPath", "GraphicsPath"):
@@ -746,7 +759,7 @@ def run_validation() -> dict[str, Any]:
 
     return {
         "status": "pass" if not errors else "fail",
-        "candidate": "agent-routekit 0.1.1",
+        "candidate": "agent-routekit 0.1.2",
         "product_revision_sha256": product_revision_sha256(),
         "root": ".",
         "checks": {name: "pass" if not group else "fail" for name, group in check_errors.items()},

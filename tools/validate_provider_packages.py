@@ -69,7 +69,7 @@ def main() -> int:
     claude_path = Path(claude_executable)
     codex_receipt = {
         "schema_version": "1.0",
-        "candidate": "agent-routekit 0.1.1",
+        "candidate": "agent-routekit 0.1.2",
         "product_revision_sha256": revision,
         "status": "pass" if codex_code == 0 else "fail",
         "exit_code": codex_code,
@@ -81,7 +81,7 @@ def main() -> int:
     }
     claude_receipt = {
         "schema_version": "1.0",
-        "candidate": "agent-routekit 0.1.1",
+        "candidate": "agent-routekit 0.1.2",
         "product_revision_sha256": revision,
         "status": "pass" if claude_code == 0 else "fail",
         "checks": [{"name": "claude_marketplace_manifest", "exit_code": claude_code, "output": claude_output}],
