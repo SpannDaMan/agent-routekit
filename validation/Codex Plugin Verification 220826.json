@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "candidate": "agent-routekit 0.1.4",
-  "product_revision_sha256": "a638ef527c6646002862045d45bec4be7f137f7f3ec05652bf059ff9576bda12",
+  "product_revision_sha256": "73735ca0a464c1bda610a89243d84b23d23b05c359a08e094d68cbd41c55ecec",
   "status": "pass",
   "exit_code": 0,
   "validated_plugin_path": "plugins/agent-routekit",
